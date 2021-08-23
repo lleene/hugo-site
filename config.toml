@@ -1,0 +1,4 @@
+baseURL = 'https://lieuwe.leene.dev/'
+languageCode = 'en-uk'
+title = 'Lieuwe Leene'
+theme = "hermit"
