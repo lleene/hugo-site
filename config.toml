@@ -1,4 +1,8 @@
-baseURL = 'https://lieuwe.leene.dev/'
+baseURL = 'http://localhost/'
 languageCode = 'en-uk'
 title = 'Lieuwe Leene'
-theme = "hermit"
+theme = 'hermit'
+relativeURLs = true
+canonifyURLs = true
+[params]
+  date = "Jan 2, 2006"
