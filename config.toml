@@ -1,4 +1,55 @@
-baseURL = 'https://lieuwe.leene.dev/'
-languageCode = 'en-uk'
+baseURL = '$HOSTNAME$/'
 title = 'Lieuwe Leene'
-theme = "hermit"
+languageCode = 'en-uk'
+theme = 'hermit'
+relativeURLs = true
+canonifyURLs = true
+
+enableGitInfo = true
+pygmentsCodefences  = true
+pygmentsUseClasses  = true
+hasCJKLanguage = true
+rssLimit = 10
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+enableEmoji = true
+
+themeColor = "#494f5c"
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  dateform        = 'Jan 2, 2006'
+  dateformShort   = 'Jan 2'
+  dateformNum     = '2006-01-02'
+  dateformNumTime = '2006-01-02 15:04 -0700'
+  homeSubtitle = "Welcome Friend. 🐸"
+
+[author]
+  name = 'L. B. Leene'
+
+[[params.social]]
+  name = 'linkedin'
+  url = 'https://www.linkedin.com/in/lleene/'
+
+[[params.social]]
+  name = 'twitter'
+  url = 'https://twitter.com/LieuweLeene'
+
+[[params.social]]
+  name = 'email'
+  url = 'mailto:lieuwe@leene.dev'
+
+[[params.social]]
+  name = "github"
+  url = "https://git.leene.dev/lieuwe"
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "posts/"
+    weight = 16
+  [[menu.main]]
+    name = "About"
+    url = "about/"
+    weight = 16
