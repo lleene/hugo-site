@@ -1,11 +1,10 @@
-baseURL = 'http://localhost/'
+baseURL = '$HOSTNAME$/'
 title = 'Lieuwe Leene'
-
 languageCode = 'en-uk'
 theme = 'hermit'
 relativeURLs = true
 canonifyURLs = true
- 
+
 enableGitInfo = true
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
