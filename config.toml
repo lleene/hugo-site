@@ -16,7 +16,6 @@ enableEmoji = true
 
 themeColor = "#494f5c"
 
-
 [taxonomies]
   tag = "tags"
 
