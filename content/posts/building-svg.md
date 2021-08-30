@@ -1,7 +1,13 @@
 ---
 title: "Building With SVG"
 date: 2021-08-28T11:53:54+02:00
-draft: true
+draft: false
+toc: true
+tags:
+  - svg
+  - xml
+  - hugo
+  - golang
 ---
 
 # SVG Tools and Hugo Integration
@@ -73,8 +79,8 @@ added directly to KGT as a feature in future releases.
   rect, line, path { stroke-width: 1.5px; stroke: white; fill: transparent; }
   rect, line, path { stroke-linecap: square; stroke-linejoin: rounded; }
   path { fill: transparent; }
-  text { fill: white; }
-  text.literal { font-family: monospace; }
+  text { fill: white; font-family:'Trebuchet MS'; }
+  text.literal {  }
   line.ellipsis { stroke-dasharray: 1 3.5; }
   tspan.hex { font-family: monospace; font-size: 90%; }
   path.arrow { fill: white; }

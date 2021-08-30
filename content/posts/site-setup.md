@@ -2,12 +2,12 @@
 title: "Setting up a new site."
 date: 2021-08-24T10:24:27+02:00
 draft: false
-toc: false
-images:
+toc: true
 tags:
   - website
   - setup
   - hugo
+  - git-filter
 ---
 
 Previously I tried using grav with the intention to serve a simple website as
@@ -43,15 +43,28 @@ Currently I setup two branches: `master` which is deployed statically on
 leene.dev, and `dev` which is just for local development as I try out different
 things. I setup a clean-smudge git filter to manage deployment on a site-basis:
 
-```toml
+``` toml
 [filter "hostmgmt"]
         smudge = sed 's@\\$HOSTNAME\\$@http://localhost@'
         clean  = sed 's@http://localhost@\\$HOSTNAME\\$@'
 ```
 
+Note if we make a change to just the filter we can re-apply it by resetting our
+index and checking out HEAD again.
+
+``` bash
+rm .git/index
+git checkout HEAD -- "$(git rev-parse --show-toplevel)"
+```
+
 But looking closer at the hugo documentation, it would be better to prepare a
 similar development and production configuration. We'll see if this can evaluate
-system environment variables.
+system environment variables. Alternatively you can also specify the server
+parameters directly.
+
+``` bash
+hugo server --bind=0.0.0.0 --baseURL=http://zathura --port=1313
+```
 
 ## Planned features and content
 
