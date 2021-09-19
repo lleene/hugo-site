@@ -43,3 +43,5 @@ my long term projects which is related to image classification based on
 structural decomposition rather than textural features. The main idea here is
 to analyse and extract structure in an image before performing in-depth analysis
 such that said analysis is most specific to its context.
+
+![small_sip](/images/sip.gif)
