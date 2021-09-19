@@ -1,11 +1,10 @@
 ---
-title: "Mile Stones"
+title: "Mile Stones 📚"
 date: 2021-08-28T16:13:52+02:00
 draft: false
 tags:
-  - website
+  - content
   - plan
-  - ideas
 ---
 
 This is a list of topics that I may include at some point in time:
@@ -17,7 +16,7 @@ This is a list of topics that I may include at some point in time:
 
 I also want to share some of the IC design work building up a technical profile:
 1. Chip gallery
-2. Acedemic topics
+2. Academic topics
 3. ADC stuff
 4. Time domain processing
 5. Skill and Cadence utilities

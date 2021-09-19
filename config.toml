@@ -50,14 +50,10 @@ themeColor = "#494f5c"
     url = "about/"
     weight = 16
   [[menu.main]]
-    name = "Posts"
-    url = "posts/"
-    weight = 16
-  [[menu.main]]
     name = "Projects"
     url = "projects/"
     weight = 16
   [[menu.main]]
-    name = "Links"
-    url = "links/"
+    name = "Posts"
+    url = "posts/"
     weight = 16

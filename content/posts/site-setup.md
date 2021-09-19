@@ -1,19 +1,19 @@
 ---
-title: "Setting up a new site."
+title: "Setting Up a New Site 🌃"
 date: 2021-08-24T10:24:27+02:00
 draft: false
 toc: true
 tags:
   - website
-  - setup
+  - config
   - hugo
-  - git-filter
+  - git
 ---
 
-Previously I tried using grav with the intention to serve a simple website as
+Previously I tried using Grav with the intention to serve a simple website as
 it is quite easy to setup and the interface seemed quite nice. However the
 editing environment didn't feel good and after googling around a bit hugo
-already seemed alot more appealing. It renders from markdown with some html/css
+already seemed a lot more appealing. It renders from markdown with some html/css
 config files and can serve content statically or dynamically without superfluous
 features.
 
@@ -33,14 +33,14 @@ cd hugo
 go install
 ```
 I started off with the hermit theme and initialized a repository for this site
-and the theme to track changes separately. I will probably adjust the color and
+and the theme to track changes separately. I will probably adjust the colour and
 type-setting to some extent. Then eventually adjusting the actual layouts and
 templates as we go.
 
 ## Git filter
 
 Currently I setup two branches: `master` which is deployed statically on
-leene.dev, and `dev` which is just for local development as I try out different
+`leene.dev`, and `dev` which is just for local development as I try out different
 things. I setup a clean-smudge git filter to manage deployment on a site-basis:
 
 ``` toml
