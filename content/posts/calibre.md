@@ -1,7 +1,8 @@
 ---
 title: "Calibre Physical Verification Hacks"
 date: 2021-09-14T11:30:11+02:00
-draft: true
+draft: false
+toc: true
 tags:
   - calibre
   - config

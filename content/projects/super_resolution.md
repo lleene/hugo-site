@@ -1,7 +1,8 @@
 ---
 title: "Super Resolution 🧙‍♂️"
 date: 2021-09-19T13:30:00+02:00
-draft: true
+draft: false
+toc: true
 tags:
   - upscaling
   - image-processing
