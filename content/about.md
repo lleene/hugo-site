@@ -13,6 +13,10 @@ This site shares a bit of informal documentation and more blog-based record
 keeping. Providing commentary on design decisions should be just as useful as
 some of the technical documentation however included in my repositories.
 
+### Contact
+
+You can reach me at `lieuwe at leene dot dev`. 
+
 ## My Setup
 
 I mainly use RHEL flavours of linux having both CentOS and Fedora machines. Most
