@@ -1,5 +1,5 @@
 ---
-title: "Binding QML with Python: PyViewer"
+title: "Binding QML with Python: PyViewer 👾"
 date: 2021-08-29T12:53:19+02:00
 draft: false
 toc: true
