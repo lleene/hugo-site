@@ -6,8 +6,8 @@ toc: true
 tags:
   - svg
   - xml
-  - hugo
-  - golang
+  - python
+  - code
 ---
 
 SVG is generally my image format of choice having used it for illustrations,
@@ -130,17 +130,3 @@ The final result is shown below.
 Note that this figure is quite a bit more compact but adding additional labels
 or customizations outside the scope of the library will probably require
 quite a bit of manual work. This could be a fun side project though.
-
-## Mermaid CLI
-
-
-
-# Hugo Integration
-
-The hope here is that we can call a predefined go procedure that parses
-some section of markdown source code and instantiates the corresponding svg file
-under our static folder that is then referenced.
-
-``` go
-{{/* a comment */}}
-```
