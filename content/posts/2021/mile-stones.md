@@ -10,9 +10,8 @@ tags:
 This is a list of topics that I may include at some point in time:
 1. SSL and NGINX setup guide
 2. Postfix setup guide
-3. Danbooru setup guide
-4. pyside notes from pyviewer project
-5. other fun stuff
+3. Pyside notes from pyviewer project
+4. Other fun stuff
 
 I also want to share some of the IC design work building up a technical profile:
 1. Chip gallery

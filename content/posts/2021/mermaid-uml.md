@@ -120,3 +120,49 @@ classDiagram
       PyViewer <-- ArchiveLoader
       PyViewer <-- ApplicationWindow
 ```
+
+### Live viewer command line script
+
+The bash script below uses feh, an X11 image viewing utility, inotify-tools
+and ImageMagic from the command line to provide a live view of a mmd file
+that is built as changes are made to the file.
+
+```bash
+#!/usr/bin/env bash
+function usage() {
+  usage_str="$(basename "${BASH_SOURCE[0]}") IN_FILE OUT_FILE"
+  usage_str+="[ --config=<Config File> | -c <Config File> ] "
+  usage_str+="[ -h | --help ]"
+  cat <<<"
+Usage:
+  $usage_str
+Options:
+  -c | --config:      Specify CSS style for Mermaid diagram
+                      Default: None
+  -h | --help:        Displays this menu
+  "
+  exit 1
+}
+function main() {
+  local ARGS=("-i" "$1" "-o" "$2")
+  case "$1" in
+    -c)            ARGS=("-i" "$3" "-o" "$4" "-c" "$2");;
+    --config=*)    ARGS=("-i" "$2" "-o" "$3" "-c" "${1#*=}");;
+    -h|--help)     usage;;
+    -*)            echo "Invalid Option: $1"; usage ;;
+  esac
+  # echo "IN:${ARGS[1]}  OUT:${ARGS[3]}"
+  mmdc ${ARGS[@]} &> /dev/null
+  mogrify -trim "${ARGS[3]}" 
+  feh --reload 2 "${ARGS[3]}" &
+  sleep 0.1
+  inotifywait -qm --event modify --format '%w' "${ARGS[1]}" | \
+   ( mmdc ${ARGS[@]} ; mogrify -trim "${ARGS[3]}" ) &> /dev/null
+}
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+  if [ "$#" -lt 2 ] || [ "$#" -gt 4 ] ; then
+    usage
+  fi
+  main "$@"
+fi
+```

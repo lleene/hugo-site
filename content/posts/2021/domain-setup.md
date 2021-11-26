@@ -17,12 +17,12 @@ services require.
 
 | Name                                            | Description
 | ----------------------------------------------- | -----------------------  
-| **A**     Address record                        | physical IPv4 address associated with this domain
-| **CNAME** Canonical name record                 | Alias name for A record name. This is generally for subdomains (i.e. other.domain.xyz as alias for domain.xyz both served the same machine)
-| **CAA**   Certification Authority Authorization | DNS Certification Authority Authorization, constraining acceptable CAs for a host/domain.
-| **DS**    Delegation signer                     | The record used to identify the DNSSEC signing key of a delegated zone
-| **MX**    Mail exchange record                  | Maps a domain name to a list of message transfer agents for that domain
-| **TXT**   Text record                           | Carries machine-readable data, such as specified by RFC 1464, opportunistic encryption, Sender Policy Framework, DKIM, DMARC, DNS-SD, etc.
+| `A`       Address record                        | // physical IPv4 address associated with this domain 
+| `CNAME`   Canonical name record                 | Alias name for A record name. This is generally for subdomains (i.e. other.domain.xyz as alias for domain.xyz both served the same machine)
+| `CAA`     Certification Authority Authorization | DNS Certification Authority Authorization, constraining acceptable CAs for a host/domain.
+| `DS`      Delegation signer                     | The record used to identify the DNSSEC signing key of a delegated zone
+| `MX`      Mail exchange record                  | Maps a domain name to a list of message transfer agents for that domain
+| `TXT`     Text record                           | Carries machine-readable data, such as specified by RFC 1464, opportunistic encryption, Sender Policy Framework, DKIM, DMARC, DNS-SD, etc.
 
 The essential records for web services are the A and CNAME records which enable
 correct name look up when outside you private network. Nowadays SSL should be
@@ -52,3 +52,19 @@ which yields a long public key. You need to break this key up into multiple
 strings which the `openkdim` tool may or may not do by default as there is a
 maximum character length for each TXT entry element. As long as no semi-colons
 are inserted this should just work as expected.
+
+### Debugging DNS Issues
+
+Often is things don't go as expected. Especially with DNS related issues since
+caching prevents real-time corrections.
+
+```bash
+nslookup leene.dev
+dig $DOMAIN_NAME $RECORD_NAME
+```
+
+Two of the better tools here is nslookup and dig. The first will generally
+tell you how and where you name lookup is being resolved. Sometimes this
+may not be as expected so its always good to double check. The second is
+literally a DNS utility that lets you query specific records. For example
+testing your openDKIM setup relies on the DNS record correctly being set.
