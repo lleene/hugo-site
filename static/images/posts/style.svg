@@ -1,0 +1,10 @@
+  <style>
+    rect, line, path { stroke-width: 1.5px; stroke: white; fill: transparent; }
+    rect, line, path { stroke-linecap: square; stroke-linejoin: rounded; }
+    path { fill: transparent; }
+    text { fill: white; }
+    text.literal { font-family: monospace; }
+    line.ellipsis { stroke-dasharray: 1 3.5; }
+    tspan.hex { font-family: monospace; font-size: 90%; }
+    path.arrow { fill: white; }
+  </style>

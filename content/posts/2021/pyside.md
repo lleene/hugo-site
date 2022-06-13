@@ -64,18 +64,62 @@ to a qml function call "swipe.update_paths" for example.
 viewer.path_changed.connect(swipe.update_paths)
 ```
 
+## Example: passing images as bindary data
+
+For reference the code below outlines a simple example that loads an image from
+a zip archive and makes the binary data available for QML to source. This
+avoids the need for explicit file handles when generating or deflating images
+that are needed for the QML front-end.
+
+```python
+class Archive(ZipFile):
+    """Simple archive handler for loading data."""
+    @property
+    def binarydata(self) -> bytes:
+        """Load file from archive by name."""
+        with self.open(self.source_file, "r") as file:
+            return file.read()
+```
+
+The example class above simply inherits from the zipfile standard library where
+we read a image and store it as part of the `PyViewer` class shown below. This
+class inherits from `QObject` such that the property is exposed to the qml
+interface. In this case the `imageloader` is an `Archive` handler that is
+shown above.
+
+```python
+class PyViewer(QObject):
+    """QObject for binging user interface to python backend."""
+    @Property(QByteArray)
+    def image(self) -> QByteArray:
+        """Return an image at index."""
+        return QByteArray(self.imageloader.binarydata).toBase64()
+```
+
+This setup allows a relatively clean call to the `viewer.image` property within
+the QML context as shown below. Other data types such as `int`, `string`,
+`float`, and booleans can be passed as expected without requiring the
+QByteArray container.
+
+```qml
+Image {
+  anchors.fill: parent
+  fillMode: Image.PreserveAspectFit
+  mipmap: true
+  source = "data:image;base64," + viewer.image
+}
+```
+
 ## Downside
 
 Debugging and designing QML in this environment is limited since the pyside
 python library does not support all available QML/QT6 functionality. In most
 cases you are looking at C++ Qt documentation for how the pyside data-types
-and methods are supposed to behave without good hinting.
+and methods are supposed to behave without good hinting. Having developed
+native C++/QML projects previously helps a lot. The main advantage here is t
+hat QML source code / frame-works can be reused.
 
-Also the variety in data types that can be passed from one context to the other
-is constrained although in this case I was able to manage with strings and byte
-objects.
-
-## Other Notes: TODO
+## Other Notes:
 
 ```python
 ImageCms.profileToProfile(img, 'USWebCoatedSWOP.icc',

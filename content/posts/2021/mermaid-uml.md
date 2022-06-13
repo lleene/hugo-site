@@ -42,7 +42,7 @@ graph LR
 
 This example generates the diagram show below.
 
-![example_mermaid.svg](/images/example_mermaid.svg)
+{{< figure src="/images/posts/example_mermaid.svg" title="example_mermaid.svg" >}}
 
 There are four base themes: dark, default, forest, neutral. Additional
 [customization](https://mermaid-js.github.io/mermaid/#/theming) is possible.
@@ -73,7 +73,7 @@ diagrams of classes and inter-related structures. For example the UML diagram be
 [pyviewer]({{< relref "pyside.md" >}} "pyside") which is image simple
 browsing utility for compressed archives.
 
-![example_pyviewer.svg](/images/example_pyviewer.svg)
+{{< figure src="/images/posts/example_pyviewer.svg" title="example_pyviewer.svg" >}}
 
 This does quite well at illustrating how classes are composed and which methods
 are available at various scopes. It also helps organizing and structuring a
@@ -153,7 +153,7 @@ function main() {
   esac
   # echo "IN:${ARGS[1]}  OUT:${ARGS[3]}"
   mmdc ${ARGS[@]} &> /dev/null
-  mogrify -trim "${ARGS[3]}" 
+  mogrify -trim "${ARGS[3]}"
   feh --reload 2 "${ARGS[3]}" &
   sleep 0.1
   inotifywait -qm --event modify --format '%w' "${ARGS[1]}" | \

@@ -87,7 +87,7 @@ added directly to KGT as a feature in future releases.
 
 The final result is shown below.
 
-![example_kgt.svg](/images/example_kgt.svg)
+{{< figure src="/images/posts/example_kgt.svg" title="example_kgt.svg" >}}
 
 ## Tabatkins Railroad Diagrams
 
@@ -118,15 +118,29 @@ would look like this:
 
 ``` python
 import railroad
-with open("./test.svg","w+") as file:
+with open("./posts/test.svg","w+") as file:
     obj = railroad.Diagram("foo", railroad.Choice(0, "bar", "baz"), css=style)
     obj.writeSvg(file.write)
 ```
 
 The final result is shown below.
 
-![example_kgt.svg](/images/example_trd.svg)
+{{< figure src="/images/posts/example_trd.svg" title="example_trd.svg" >}}
 
 Note that this figure is quite a bit more compact but adding additional labels
 or customizations outside the scope of the library will probably require
 quite a bit of manual work. This could be a fun side project though.
+
+# Using Hugo Short Codes
+
+
+
+``` go
+{< python-svg dest="/images/posts/test.svg" title="This is a pyuthon-svg exmaple." >}
+railroad.Diagram("foo", railroad.Choice(0, "bar", "baz"), css=style)
+{< /python-svg >}
+```
+
+{{< python-svg dest="/images/posts/test.svg" title="This is a python-svg exmaple." >}}
+railroad.Diagram("foo", railroad.Choice(0, "bar", "baz"), css=style)
+{{< /python-svg >}}

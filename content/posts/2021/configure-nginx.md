@@ -1,9 +1,8 @@
 ---
 title: "Setting up a NGINX configuration 🧩"
 date: 2021-10-31T15:08:33+01:00
-draft: false
+draft: true
 toc: false
-images:
 tags:
   - website
   - config

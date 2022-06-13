@@ -23,7 +23,7 @@ themeColor = "#494f5c"
   dateformShort   = 'Jan 2'
   dateformNum     = '2006-01-02'
   dateformNumTime = '2006-01-02 15:04 -0700'
-  homeSubtitle = "Welcome Friend 🐸"
+  homeSubtitle    = "Welcome Friend"
 
 [author]
   name = 'L. B. Leene'
@@ -48,12 +48,20 @@ themeColor = "#494f5c"
   [[menu.main]]
     name = "About"
     url = "about/"
-    weight = 16
-  [[menu.main]]
-    name = "Projects"
-    url = "projects/"
-    weight = 16
+    weight = 1
   [[menu.main]]
     name = "Posts"
     url = "posts/"
-    weight = 16
+    weight = 2
+  [[menu.main]]
+    name = "Publications"
+    url = "publications/"
+    weight = 3
+  [[menu.main]]
+    name = "Chips"
+    url = "chips/"
+    weight = 5
+  [[menu.main]]
+    name = "Resume"
+    url = "resume/"
+    weight = 10
