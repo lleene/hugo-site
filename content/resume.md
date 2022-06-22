@@ -29,6 +29,23 @@ came from applying time-domain techniques to realize sensing circuits with
 exceptional dynamic range such that a wider variety of neurological components
 can be picked up during recording or stimulation.
 
+## Proficiencies
+
+I have well over 10 years of design experience using Cadence and Seimens (Mentor Graphics)
+EDA design suite extensively from process-development-kit integration to mixed-signal
+design verification. Having predominantly designed mixed-signal instrumentation chips most of my
+proficiency lies with the Virtuoso analogue design flow. However I have historically
+worked in smaller design groups of 5-10 people where you need to be familiar with
+the entire development process for a device from start to finish touching on process selection,
+tool configuration, and production planning.
+
+Besides that I am very comfortable with software development. Currently I
+extensively program in python, maintaining packages for command-line-tool-chains
+and some of my hobby projects. However I administer and deploy several web
+services based on ruby, php, and node/js with a postgresql backend. Most of
+my earlier projects while at Imperial were C++ based with Qt as the go-to
+graphical library.
+
 # Employment Record
 
 {{< columns src="/images/about/novelda_logo_white.svg" >}}

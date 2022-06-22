@@ -1,5 +1,5 @@
 ---
-title: "Building With SVG 🖼"
+title: "Building With SVG"
 date: 2021-08-28T11:53:54+02:00
 draft: false
 toc: true
@@ -131,16 +131,3 @@ Note that this figure is quite a bit more compact but adding additional labels
 or customizations outside the scope of the library will probably require
 quite a bit of manual work. This could be a fun side project though.
 
-# Using Hugo Short Codes
-
-
-
-``` go
-{< python-svg dest="/images/posts/test.svg" title="This is a pyuthon-svg exmaple." >}
-railroad.Diagram("foo", railroad.Choice(0, "bar", "baz"), css=style)
-{< /python-svg >}
-```
-
-{{< python-svg dest="/images/posts/test.svg" title="This is a python-svg exmaple." >}}
-railroad.Diagram("foo", railroad.Choice(0, "bar", "baz"), css=style)
-{{< /python-svg >}}

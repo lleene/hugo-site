@@ -98,3 +98,12 @@ return [ link["href"]
 
 This is probably the most common use case for the `BeautifulSoup` library and
 it is very effective instead of sifting through any html data.
+
+## Cloudflare Hosted Domains 
+
+A number sites will be hosted/backed by Cloudflare that tend to keep track of
+the user session in combination with the session cookies. This means that
+by-passing the anti-bot measures is slightly more inconvienient than usual.
+Fortunately there are a few python-libraries that help to set the request
+headers correctly.
+
