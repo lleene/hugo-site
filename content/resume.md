@@ -39,12 +39,13 @@ worked in smaller design groups of 5-10 people where you need to be familiar wit
 the entire development process for a device from start to finish touching on process selection,
 tool configuration, and production planning.
 
-Besides that I am very comfortable with software development. Currently I
+Besides that I am very comfortable with software development. I
 extensively program in python, maintaining packages for command-line-tool-chains
-and some of my hobby projects. However I administer and deploy several web
+and some of my hobby projects. In addition I administer and deploy several web
 services based on ruby, php, and node/js with a postgresql backend. Most of
-my earlier projects while at Imperial were C++ based with Qt as the go-to
-graphical library.
+my earlier projects while at Imperial College were C++ based with Qt as the
+go-to graphical library and revolved around creating interfaces with custom
+devices and processing data.
 
 # Employment Record
 

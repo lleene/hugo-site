@@ -1,9 +1,9 @@
 ---
 title: "Hugo Short Codes"
 date: 2022-06-14T19:36:18+02:00
-draft: false
+draft: true
 toc: false
-tags: 
+tags:
   - hugo
   - code
 ---
@@ -73,4 +73,3 @@ railroad.Diagram("foo", railroad.Choice(0, "bar", "baz"), css=style)
 {{< python-svg dest="/images/posts/test.svg" title="This is a python-svg exmaple." >}}
 railroad.Diagram("foo", railroad.Choice(0, "bar", "baz"), css=style)
 {{< /python-svg >}}
-

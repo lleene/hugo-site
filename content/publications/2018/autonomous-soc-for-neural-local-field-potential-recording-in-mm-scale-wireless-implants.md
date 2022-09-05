@@ -27,7 +27,7 @@ Next generation brain machine interfaces fundamentally need to improve the infor
 
 There has been significant effort in developing integrated circuits for Brain Machine Interfaces (BMIs)[^1]. These systems enable a wide range of applications from recording neural signals for scientific study to treating neurological conditions. They integrate a multitude of functions for sensing, processing, telemetry and power management. There is a drive to develop wireless modules that are hermetically packaged for chronic implant applications[^2]. Moreover, any reduction in size can substantially improve device efficacy by reducing the impact on surrounding tissue. Any reduction in weight is also highly desirable for behaving animal studies. While a number of proposed systems have relied on PCB[^3] or flexible [^4] technologies that allow low cost, rapid development. This approach leads to substantially larger implants when compared to silicon-based integration[^1]. This is because the silicon substrate enables a large number of electrodes to be integrated directly onto the active die in the shape of an implantable shank[^5]. In contrast, making a large number of intra-device connections has a significant impact on device footprint as well as fabrication complexity with added bio-compatibility constraints [^6]. For this reason a number of groups are investigating millimetre-scale solutions for recording[^7] and stimulation[^8] with all aspects of the implant integrated within the silicon die or micro-machined package.
 
-{{< figure src="Figures/ENGINI.pdf" title="Figure 1: The ENGINI concept showing: (a) multiple freely floating probes being wirelessly interrogated by a headstage unit; (b) schematic representation." width="500" >}}
+{{< figure src="/images/biocas2017/ENGINI.svg" title="Figure 1: The ENGINI concept showing: (a) multiple freely floating probes being wirelessly interrogated by a headstage unit; (b) schematic representation." width="500" >}}
 
 The 'Empowering Next Generation Implantable Neural Interfaces' (ENGINI) project achieves its scalability by utilising multiple mm-scale probes that are each implanted and 'freely floating' in the cortex. These observe field potentials along the cortical column but also laterally through different probes. These are wirelessly coupled to an external headstage with trancutanious and transdural inductive links to deliver power and exchange data. This is illustrated in Fig. 1.
 
@@ -38,7 +38,7 @@ This particular system relies on the autonomous behaviour of each probe such tha
 
 The integrated system architecture is shown in Fig. 2. This shows a single recording unit which is inductively coupled to a primary coil L<sub>1<sub> that provides power using a 433 MHz carrier to leave sufficient bandwidth for frequency division multiplexing multiple recording units. In fact the receiving coil L<sub>2<sub> will be located on a passive undoped silicon interposer that is flip-chip bonded to the active instrumentation IC. The resonant tank L<sub>2<sub> C<sub>2<sub> receives the transmitted power and establishes a DC voltage on V<sub>DD<sub> once the rectifier down-converts the carrier. First a biasing circuit is powered that generates digital flags that indicate the supply voltage level. These flags assist the self-tuning control algorithm to adjust the loading capacitance C<sub>T<sub> to tune or detune the resonant tank L<sub>2<sub>C<sub>2<sub> and receive a specific amount of power to establish 1.5 V on the V<sub>DD<sub> supply. This feedback regulates the supply voltage in a course manner without needing active control from the primary side (external controller). This implies the analogue circuits need to accommodate for any fluctuations without diminishing sensor precision. The continuous-time fully-differential modulator topology will further prevent these supply noise aggressors from being aliased in-band during sampling. The system clock can be directly extracted from the resonant tank using adiabatic logic elements to implement a series of frequency dividers before passing the clock to the digital core[^10].
 
-{{< figure src="Figures/SYS.pdf" title="Figure 2: ENGINI system architecture for recording LFP at high resolution. This tunes the receiving resonant tank L<sub>2<sub>C<sub>2<sub> to regulate V<sub>DD<sub>." width="500" >}}
+{{< figure src="/images/biocas2017/SYS.svg" title="Figure 2: ENGINI system architecture for recording LFP at high resolution. This tunes the receiving resonant tank L<sub>2<sub>C<sub>2<sub> to regulate V<sub>DD<sub>." width="500" >}}
 
 
 # 4 Circuit Implementation
@@ -51,7 +51,7 @@ This ENGINI prototype has been developed for a 0.35 μ m CMOS technology such th
 
 This provides a stable power supply for the electronics and back-scatters digitised recordings. The circuit architecture is shown in Fig. 3. This contains a binary weighted capacitor bank C<sub>T<sub>, a passive full wave rectifier, and a sensing circuit which are all digitally-controlled. The principle of operation can be described as follows. First, the cross-coupled rectifier converts the induced AC voltage to a DC power on V<sub>x<sub>. Then, the low voltage amplifier A<sub>2<sub> performs auto-zeroing by shorting C<sub>F<sub> and simultaneously sampling the rectified voltage onto C<sub>I<sub>. After sampling, the parallel binary-weighted capacitor bank C<sub>T<sub> is adjusted to tune or de-tune LC tank on the secondary side. There is therefore a voltage fluctuation at node V<sub>x<sub>. The change in V<sub>x<sub> is amplified 30\\(\times\\) by A<sub>2<sub> which corresponds to the ratio C<sub>I<sub>/C<sub>F<sub>. The polarity of the resulting change is digitised using the comparator, instructing the digital control to add or remove parallel capacitors in the next cycle of regulation. Two supply voltage level indicators from the biasing circuit further assist this feedback to increase or reduce the supply voltage and whether to perform LSK respectively. The resistor R<sub>z<sub> is added after the output of rectifier such that the speed at which V<sub>X<sub> can be controlled is not dependent on the load capacitance C<sub>L<sub> which may be quite large. This allows fast regulation with a clock speed of 846 kHz at the cost of some reduction in power efficiency due to the voltage drop from V<sub>X<sub> to V<sub>DD<sub>.
 
-{{< figure src="Figures/REG.pdf" title="Figure 3: Adaptive power conversion and regulation circuit using full-wave rectifier, tunable LC tank, auto-zeroing amplifier and strong arm comparator" width="500" >}}
+{{< figure src="/images/biocas2017/REG.svg" title="Figure 3: Adaptive power conversion and regulation circuit using full-wave rectifier, tunable LC tank, auto-zeroing amplifier and strong arm comparator" width="500" >}}
 %
 
 ## 6  \\(\Delta\Sigma\\) Instrumentation Circuit
@@ -60,7 +60,7 @@ This provides a stable power supply for the electronics and back-scatters digiti
 
 The instrumentation circuit used to acquire the electrode recordings is based on the time-domain \\(\Delta\Sigma\\) modulator in [^11]. This uses differential oscillators as the integration element with an asynchronous signal quantizer. However the implementation presented here introduces an additional Gm-C integrator and a feed-forward path to realise second-order noise shaping. This reduces the oversampling ratio (OSR) requirement and substantially increases the dynamic range of the system. A single-ended equivalent of the fully-differential structure used here is shown in Fig. 4.
 
-{{< figure src="Figures/SDM.pdf" title="Figure 4: Simplified equivalent of the second-order \\(\Delta\Sigma\\) modulator using time-domain signal quantization exhibiting a bandpass response due to the switched current DAC which removes any electrode offset." width="500" >}}
+{{< figure src="/images/biocas2017/SDM.svg" title="Figure 4: Simplified equivalent of the second-order \\(\Delta\Sigma\\) modulator using time-domain signal quantization exhibiting a bandpass response due to the switched current DAC which removes any electrode offset." width="500" >}}
 %
 
 Note that this is a DC-coupled configuration where the analogue node V<sub>O<sub> tracks the electrode potential. An electrode offset larger than \\(\pm\\)100 mV can be accommodated without saturating the modulator by adding the digitally switched and duty cycled current in the feedback path. The quantized signal Q is AC coupled onto V<sub>O<sub> with a relatively large attenuation factor due to capacitive division α=1/(C<sub>0<sub>/C<sub>C<sub>+1) which will allow the in-band signal gain. This can be confirmed using the small signal model for this circuit described in Eq. 1-4 where H(s) represents the second-order loop filter and C(s) the charge pump with capacitive feed-forward. The factor k1=OSR f<sub>smp<sub>/2 reflects the modulator bandwidth in terms of the target sampling frequency f<sub>smp<sub>. The factor k2=2\\(\pi\\) f<sub>hp<sub> represents the integration constant of the charge pump in terms of the high-pass cut-off frequency f<sub>hp<sub>. This approach is inspired by the first order modulator in [^12]. The implemented circuit uses an OSR of 64, a 1 Hz high-pass corner frequency, and third order CIC filter to decimate the output. This leads to the noise and signal transfer functions shown in Fig. 5.
@@ -73,7 +73,7 @@ $$  NTF(s) = \frac{1}{1+\alpha C H} $$
 
 $$  C(s) = 1 + \frac{k2}{s} $$
 
-{{< figure src="Figures/BODE.pdf" title="Figure 5: Analytical quantisation noise and signal transfer functions of the proposed modulator configuration." width="500" >}}
+{{< figure src="/images/biocas2017/BODE.svg" title="Figure 5: Analytical quantisation noise and signal transfer functions of the proposed modulator configuration." width="500" >}}
 
 ## 7 Reference and Biasing Circuit
 
@@ -83,7 +83,7 @@ Since the circuit is going to be operated in a neural implant it is expected tha
 
 In addition, the reference circuit generates logic levels indicating that the supply voltage has reached \\(\approx\\) 1 V, 1.3 V and 1.5 V used by the control loop of the SoC. The first indicator (1 V) is designed using a current source inverter as described in [^15]. The remaining two indicators are derived from V<sub>REF<sub> to ensure good tolerance to process variations.
 
-{{< figure src="Figures/refc.pdf" title="Figure 6: Schematic of the reference and biasing circuit (start-up circuit not shown)." width="500" >}}
+{{< figure src="/images/biocas2017/refc.svg" title="Figure 6: Schematic of the reference and biasing circuit (start-up circuit not shown)." width="500" >}}
 
 # 8 Simulation Results
 
@@ -95,26 +95,26 @@ The designed reference circuit consumes a bias current of 5 μ A and generates a
 
 The overall system specifications are summarised in Table 1. Comparing the ENGINI system with other SoCs for brain machine interfaces demonstrates an increase in dynamic range and reduction in core size for equivalent noise performance as a result of the proposed architecture. The active silicon CMOS is currently being fabricated and will be flip-chip bonded onto a silicon based carrier. The two dies are illustrated and annotated in Fig. 9. Both dies are 16 mm² in size however the interposer is passive and only needs to embed the seal, coil, and electrode interconnect metallisation. Preliminary characterisation has shown that the L<sub>2<sub> can have an inductance of 5 nH with a Q-factor \textgreater12.
 
-{{< figure src="Figures/SPEC.pdf" title="Figure 7: Output spectrum of the \\(\Delta\Sigma\\) instrumentation circuit from transient simulation using a 10 mVpp sinusoidal input tone at 210 Hz." width="500" >}}
+{{< figure src="/images/biocas2017/SPEC.svg" title="Figure 7: Output spectrum of the \\(\Delta\Sigma\\) instrumentation circuit from transient simulation using a 10 mVpp sinusoidal input tone at 210 Hz." width="500" >}}
 
-{{< figure src="Figures/PSRR.pdf" title="Figure 8: PSRR (Power Supply Ripple Rejection) at V<sub>REF<sub>. This shows a PSRR of μ =78.29 dB & σ =1.58 dB, μ =69.94 dB & σ =1.59 dB and μ =79.95 dB & σ =0.52 dB at DC, 64 kHz and 433 MHz respectively." width="500" >}}
+{{< figure src="/images/biocas2017/PSRR.svg" title="Figure 8: PSRR (Power Supply Ripple Rejection) at V<sub>REF<sub>. This shows a PSRR of μ=78.29 dB & σ=1.58 dB, μ=69.94 dB & σ=1.59 dB and μ =79.95 dB & σ =0.52 dB at DC, 64 kHz and 433 MHz respectively." width="500" >}}
 
 Table 1: System Characteristics and Comparison with State-of-the-Art
-|		Parameter  [unit]	| This Work \\(\dagger\\)  | [^1] | [^16] | [^3]|
+|		Parameter  [unit]	| This Work | [^1] | [^16] | [^3]|
 |----|----|----|----|----|
 |		Year 				| **2017** | 2017 | 2015 | 2016 |
 |		Application				| **LFP** | ECoG | ECoG | EAP |
 |		Tech.[nm]		| **350**	 | 180  | 65 | 350 |
 |		Supply-V[V]	| **1.5**   | 0.8 | 0.5 | 1.8|
-|		Total-P[W]	| \textbf{80 μ}(\star) | 0.1 m | 0.2 m | 51 m |
+|		Total-P[W]	| 80μ | 0.1 m | 0.2 m | 51 m |
 |    Core-A[mm²]	| **2.1** |	9 | 5.8 | 12.5 |
 |    \# Channels				| **8** | 16 | 64 | 8|
 |    Bandwidth[Hz]		| **825** | 1 k | 500	| 11 k|
 |    DR[dB] 			| **85**	|	55 | 52 | 50 |
-|    IRN  [μ V<sub>rms<sub>] | **1.3** | 1.5 | 1.3 | 2.9 |
-\\(\dagger\\) Based on preliminary simulation results. \\(\star\\) Includes rectifier loss.
+|    IRN  [μV<sub>rms<sub>] | **1.3** | 1.5 | 1.3 | 2.9 |
 
-{{< figure src="Figures/D2D.pdf" title="Figure 9: Annotated design for each silicon die that will be flip-chip bonded together. This shows the bonding pads, inductive coil, seal ring, and core ENGINI system to scale." width="500" >}}
+
+{{< figure src="/images/biocas2017/D2D.svg" title="Figure 9: Annotated design for each silicon die that will be flip-chip bonded together. This shows the bonding pads, inductive coil, seal ring, and core ENGINI system to scale." width="500" >}}
 
 # 9 Conclusion
 

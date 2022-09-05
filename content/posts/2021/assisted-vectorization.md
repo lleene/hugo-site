@@ -1,7 +1,7 @@
 ---
 title: "Image Vectorization 🖇🍮"
 date: 2021-12-08T19:26:46+01:00
-draft: false
+draft: true
 toc: true
 tags:
   - svg

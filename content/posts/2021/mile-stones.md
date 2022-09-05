@@ -1,7 +1,7 @@
 ---
 title: "Mile Stones 📚"
 date: 2021-08-28T16:13:52+02:00
-draft: false
+draft: true
 tags:
   - content
   - plan

@@ -1,7 +1,7 @@
 ---
 title: "Spice Monkey 💻🐒"
 date: 2021-10-29T18:54:32+02:00
-draft: false
+draft: true
 toc: false
 images:
 tags:
