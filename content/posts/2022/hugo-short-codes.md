@@ -65,9 +65,9 @@ tags:
 
 
 ``` go
-{< python-svg dest="/images/posts/test.svg" title="This is a pyuthon-svg exmaple." >}
+{{</* python-svg dest="/images/posts/test.svg" title="This is a pyuthon-svg exmaple." */>}}
 railroad.Diagram("foo", railroad.Choice(0, "bar", "baz"), css=style)
-{< /python-svg >}
+{{</* /python-svg */>}}
 ```
 
 {{< python-svg dest="/images/posts/test.svg" title="This is a python-svg exmaple." >}}

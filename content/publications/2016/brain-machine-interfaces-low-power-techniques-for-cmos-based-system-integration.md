@@ -30,10 +30,10 @@ I would like to express my sincere gratitude for the opportunities and guidance 
 
 The ability to tap into the electrical activity of the central nervous system holds the promise of personalised health-care with unparalleled capabilities such as restoration of vision or paralysis [^2]. The development of implantable electronics that enable these capabilities are a key component to any future of bio-electronic medicines termed as electroceuticals that exhibit superior spatial and temporal precision than the chemical counterpart. This follows a vision for electronics that can be distributed throughout the body to treat a plethora of neurological conditions and psychological disorders by attaching to nerve endings to decode and modulate neural signalling[^3]. These devices provide a means to model neurological activity and find a basis for diagnosing of brain related diseases. However the human brain alone distributes the activity of \\(8\times10^{10}\\) neurons over a \\(1200 cm^3\\) volume with intricate structures where current recording systems can only observe a minute fraction of isolated activity with centimetre scale devices. Making these systems practical and useful requires more effective ways to distribute the recording of activity. This requires techniques for miniaturization towards minimally invasive implantable recording devices.
 
-"""
+```
 Today’s best brain-computer interface systems are like two supercomputers trying to talk to each other using an old 300-baud modem
         2016 - Phillip Alvelda [^4]
-"""
+```
 
 One exemplary effort directed at achieving better sensors for decoding neural activity is currently a $60 million project under a Neural Engineering System Design (NESD) program that is lead by the Defence Advanced Research Project Agency (DARPA). This is one of eight aspects under the brain initiative that is lead by research in the US which signifies the explicit importance of developing better interfaces to enable new technologies. From a data processing perspective the principle issue with current systems is the limited information rates that can be extracted from chronic neural recording devices.  
 
@@ -43,30 +43,30 @@ Brain machine interfaces have long been seen imagined as a solution to incapacit
 
 Today we face an unprecedented and increasing number of patients with neurological disorders which we have yet to find rehabilitating treatment for. In fact 350 thousand people in the UK lost their self-reliance due to a disabling neurological condition [^8]. Many of these cases are the result of unsuccessful rehabilitation after stoke, spinal cord/brain injury or our inability to treat progressive neurodegenerative conditions such as amyotrophic lateral sclerosis. While these disorders still challenge our scientific understanding, the application of machine assisted intervention for neural repair and rehabilitation has demonstrated promising results with invasive implants [^9] and non-invasive robotics [^10]. Such experimental results encourage us to continue these efforts but it is also evident that this domain requires substantial improvements towards clinical solutions equivalent to that of deep-brain stimulators, pacemakers or the cochlear implants. In retrospect the guiding imperatives currently perused by leading research for better bioelectronic medicines in humans hope are aimed at meeting a number of neuroscience achievements by 2020 [^3]. These efforts can be classified with five essential components;
 
-{{< figure src="introduction/Mapping_A.pdf}" width="500" >}}
+{{< figure src="introduction/Mapping_A.svg}" width="500" >}}
 
-{{< figure src="introduction/Mapping_B.pdf}" title="Figure 1: " width="500" >}}
+{{< figure src="introduction/Mapping_B.svg}" title="Figure 1: " width="500" >}}
 
 ** Structural & functional mapping ** Revealing the signalling interconnect for organ-centric nerve wiring and functional signalling patterns provides a baseline for the diagnosis and understanding of nervous system. Similar to that in Figure 1 where the learning process of a rat brain is investigated with regard to functional patterns. This objective includes establishing correlations between organ function and neural activity. In order to catalogue these details we require tools for high-resolution imaging of fibre anatomy and taxonomy at micrometer resolution. The scale of exploring inter- and intra-species variation in neuroanatomy necessitates the collaboration through documenting a library or repository of tracers for visualization and standardized data collection. Moreover we need to find methods for precise identification and referencing nerve structures in a clinical environment.
 
-{{< figure src="introduction/Organ_A.pdf}" width="500" >}}
+{{< figure src="introduction/Organ_A.svg}" width="500" >}}
 
-{{< figure src="introduction/Organ_B.pdf}" title="Figure 2: " width="500" >}}
+{{< figure src="introduction/Organ_B.svg}" title="Figure 2: " width="500" >}}
 
 ** Sensing organ functions ** Finding better means to support the close-loop functionality of bioelectronic factors in the body and organ behaviour is essential. Due to natural development and biological adaptation we require detailed understanding of physiological dynamics and thereby inferring organ function from marker variation. Here we need microscopic sensors that monitor and survey a variety of markers that allow us to characterize the changes in physiological markers in relation to organ and neural activity. Introducing low risk and highly reliable sensors is crucial for performing well defined and chronic data collection on patient variance. Here Figure 2 exemplifies such a sensor interfaced with the lower spinal cord to study the efficacy of neuro-reconstruction techniques to recover bladder control [^12].
 
-{{< figure src="introduction/electrode_A.pdf}" width="500" >}}
+{{< figure src="introduction/electrode_A.svg}" width="500" >}}
 
-{{< figure src="introduction/electrode_B.pdf}" title="Figure 3: " width="500" >}}
+{{< figure src="introduction/electrode_B.svg}" title="Figure 3: " width="500" >}}
 
 
 ** Electrodes for visceral nerves ** Improving electrode-based interfaces for reliable recording and modulation is a proven enabler for many clinical applications. Miniaturization of cuff-electrodes is necessary for interfacing small nerves that are \textless100\\( \mu\\)m in diameter adjacent to organs that provide greater specificity for treatment. As shown in Figure 3 these are complex structures that require delicate application in a clinical setting. Furthermore high-density arrays that exhibit shape-adaptable contacts could allow us to further maximize signal-to-noise and reliability. These platforms will need algorithms in order to track time evolving activity across multiple fascicles.
 
 ** Signal imaging and actuation ** Exploring other biophysical techniques that allow us to decode and actuate neural activity with less invasive means may result in more effective means for clinical applications with lower risk factors than cortical implants. This includes expanding on the current optogenetic methods to distribute excitatory or inhibitory activity in highly specific neuronal populations. Scaling electromagnetic and ultrasonic imaging to more practical form factors may also enable improved sensing modalities. Using nano-particles to enable remote interrogation by aforementioned sensing modalities also requires evaluating in-vivo reliability.
 
-{{< figure src="introduction/Viceral_A.pdf}" width="500" >}}
+{{< figure src="introduction/Viceral_A.svg}" width="500" >}}
 
-{{< figure src="introduction/Viceral_B.pdf}" title="Figure 4: " width="500" >}}
+{{< figure src="introduction/Viceral_B.svg}" title="Figure 4: " width="500" >}}
 
 ** Visceral control modules ** Enabling implantable sensors like that in Figure 4 requires integrating the interface with power management, wireless connectivity, and processing capabilities in highly miniaturized configurations. In particular these platforms need to provide modular support that enables recording, stimulation and blocking experiments for proof of concept. Developing the support for characterizing organ specific neural activity on-chip facilitates closed loop control without intervention. Moreover the capacity for signal processing and pattern recognition will improve bandwidth management for sensors with larger channels counts.
 
@@ -121,17 +121,17 @@ The basis for interacting with neural activity electronically is derived from ch
 
 The small signals generated by migration of ionic species is historically studied using the patch clamp method where an amplifier directly senses intracellular potential by means of a pipette sealed to the cell's membrane[^17]. This is illustrated in Figure 5. In addition we could perform extra cellular recording where an electrode is placed in close proximity to the cell. A critical difference separating these two measurements is that extracellular recording is significantly effected by the electrostatics of surrounding tissue. In particular intermediate neurons, genial cells, or astrocytes due to tissue scarring will attenuate the signal making it more difficult to detect activity. The defining advantage on the other hand is that embedding a shank with multiple electrodes will record the activity of numerous neurons without needing a clamping or sealing procedure. This allows close inspection of localized neural circuits and their interaction instead of the intricacies of single cell mechanisms. Either method however will allow the use of ion or protein sensitive electrode membranes for precise analysis of cellular fluid constituents.
 
-{{< figure src="literature/coupling_phys.pdf}" width="500" >}}
+{{< figure src="literature/coupling_phys.svg}" width="500" >}}
 
-{{< figure src="literature/coupling_elec.pdf}" title="Figure 6:  Representation of measuring neural activity with extracellular recording due to ion displacement. " width="500" >}}
+{{< figure src="literature/coupling_elec.svg}" title="Figure 6:  Representation of measuring neural activity with extracellular recording due to ion displacement. " width="500" >}}
 
 Figure 6 illustrates the physiological and circuit equivalent understanding of how conduction dynamics at the membrane are coupled to an extracellular electrode. This coupling defined as \\(V_{MEM}/V_{OUT}\\) is related to what signals appear on the voltage output of the amplifier from which we want to infer how ionic species are being modulated at the cell membrane. That is we want to detect the time dependent or reactive variations in ionic membrane conduction \\(g_{Na-}\\) and \\(g_{K+}\\) which will be loaded by various components before appearing at the input of the amplifier. This is particularly important when considering electrode composition in order to couple to the input of the amplifier. One such consideration would be avoiding faradaic charge injection from the electrode that may result in the disassociation of molecules that form harmful by-products [^18]. The physiological representation of spiking activity gives the idea that upon membrane stimulus the activation of sodium channels displaces charge inwards. This induces a localized recess in charge near the electrode before the potassium channels activate to initiate the repolarization of the cell. The effect of any intermediate tissue can be modelled by lossy coupling represented by the impedance \\(R_{e}\\), \\(R_{cell}\\), and \\(C_{cell}\\). Similarly the electrode response can be modelled using Randeles circuit by extracting the equivalent parameters \\(R_{ct}\\) and \\(Z_{CPE}\\) [^19].
 
 In this respect we observe that the response observed at the amplifier is both dependent with respect to frequency and stay loading from biological or electronic elements in the signal path. Particularly the high frequency content or spiking activity is inhibited from coupling effectively through the tissue due to shunt resistance and stray capacitive loading. This also highlights that because the impedance of the electrode is proportional to its surface area when we reduce its size we must make sure to proportionally reduce the parasitic loading from the instrumentation in terms of \\(C_{par}\\) and \\(R_{par}\\).
 
-{{< figure src="literature/cp_m1.pdf}" width="500" >}}
-{{< figure src="literature/cp_m3.pdf}" width="500" >}}
-{{< figure src="literature/cp_m2.pdf}" title="Figure 7: " width="500" >}}
+{{< figure src="literature/cp_m1.svg}" width="500" >}}
+{{< figure src="literature/cp_m3.svg}" width="500" >}}
+{{< figure src="literature/cp_m2.svg}" title="Figure 7: " width="500" >}}
 
 These relations are well understood and summarized in Figure 7 following a review on multi-electrode array technologies in [^20]. The nature of this analysis similarly extends towards larger scale recordings like electrocorticography and electroencephalography where we increasingly subject the signals to a larger tissue barrier which limits propagation of electrostatic dipole effects. It also clarifies why low-frequencies tend to be more a prominent basis for analysis in the case of less invasive methods because they are less effected by the attenuation effects. In contrast consider the advantage related to high spacial resolution at higher frequency bands as the measurement of single unit activity is isolated from distant sources by means of this attenuation. This will infer that recordings associated with analysing action potential activity are more invasive but will lead to better confidence in observing specific functional and temporally precise diagnosis of brain structures.
 
@@ -139,9 +139,9 @@ These relations are well understood and summarized in Figure 7 following a revie
 
 The prolific impact developments in the microelectronics industry is compelling enough that its prediction, Moore's law, has come to represent an established achievement for integrated electronics [^21]. The perpetual reduction in cost and sustained performance enhancement has become a strong driving force that many technologies exhibit similar growth characteristics in exponential progress simply by association with CMOS integrated circuits. While it could be considered a self-fulfilling prophesy, the expectation of progress has had a profound impact on science and engineering where research can be directed at objectives five to ten years ahead of contemporary technology to address emerging challenges. As a result leading research is not only associated with advancing our current understanding but also finding new ways to augment the methods used to validate these studies.
 
-{{< figure src="literature/trend-TPY.pdf}" width="500" >}}
+{{< figure src="literature/trend-TPY.svg}" width="500" >}}
 
-{{< figure src="literature/trend-NPY.pdf}" title="Figure 8:  Exponential growth in research driven technologies." width="500" >}}
+{{< figure src="literature/trend-NPY.svg}" title="Figure 8:  Exponential growth in research driven technologies." width="500" >}}
 
 In 2015 Moore's Law celebrated its 50\\(^{th}\\) year and in Figure 8 we look back at its uncanny accuracy. While not evident, CMOS as a technology has had to address numerous hurdles like gate leakage, thermal limits of packaging, and the break down of mesoscopic carrier transport. The exponential growth in computational capacity per Watt in particular has played a mayor role in enabling mobile devices that are seeing new opportunities in point of care medical systems. Cost reduction is most certainly not the only factor that is driving the translation of CMOS to enhance a technology like patch clamp electrophysiology. The application of miniaturized electronics to a field like neuroscience introduces a considerable amount of added-value as 'Moore than Moore' scaling benefits beside digital processing power. These include increased sensor sensitivity, material diversification, sensor in package integration, or specific manipulation of quantum effects. The characteristic growth in the number of simultaneously recorded neurons in Figure 8 is a exemplary indicator how Moore's law is accelerating development in neuroscience. Upon the introduction of using microfabrication techniques to create electrode arrays on glass in 1972 [^24] there has been a rapid growth in the number of simultaneously recorded neurons used in experiments. This growth accelerated again in the late 1990s when silicon based micro-fabrication techniques for micro-machined probes that established unprecedented capabilities. This trend can be interpreted to reflect that current systems are still unable to over come the complexity of how information in encoded within neural activity such that these application seek to acquire more recordings and measures. Nevertheless a substantial progress has been made over the past decade where only recently we have started to see successful real-time prosthetic control with a few degrees of freedom [^25].
 
@@ -188,7 +188,7 @@ Most terms in Equation 3 will correlate to some extent between similar analogue 
 
 This brings us to the importance algorithms and machine learning for sensor systems in particular. It is becoming more common that modern systems have an abundance of data and processing capacity at its disposal. This has generally lead to 'smart' sensors that can extract an adaptive set of indicators or refine signal structure at the source instead of using supervision to fine tune any changing characteristics for each sensor exhaustively. For BMIs in particular the input data has unknown mixtures of information that we can only generally assume as relevant by probing the right sections of brain structure in the area of implantation. Dealing with this decoding problem can be quite demanding in the context of recording from large ensembles of neurons. If we inevitably want to achieve a mobile solution for brain controlled prosthetics it would be imperative to develop specialized hardware and processing topologies that can achieve efficient computation on a implantable platform [^40].
 
-{{< figure src="literature/learning.pdf}" title="Figure 11:  Different classes of processing modalities with respect to topology where supervised processes are in white and adaptive processes are in grey." width="500" >}}
+{{< figure src="literature/learning.svg}" title="Figure 11:  Different classes of processing modalities with respect to topology where supervised processes are in white and adaptive processes are in grey." width="500" >}}
 
 
 The classes of methods being applied to neural sensors are very rich where some focus on extracting various characteristics in recordings while others focus on reinforcement learning associated with subjects adapting to a prosthetic[^45]. Figure 11 depicts the typical structure for methods used in neural signal decoding with references and annotated automation. We note that at least in the literature there is a general trend to wards full automated feature mapping and representation discovery because a priori understanding on signal encoding is not needed at the cost of being less resource efficient. This is a highly diversifying field because there are many challenges that remain to be addressed effectively such as the effect if long term behavioural dynamics on cognitive state variables [^46]. Even assuming spike rate based cortical recordings are used it is difficult to assert to which decoding method these systems will converge to in the long term. More typically novel methods approach improving performance by contributing to the framework of signal analysis. Typically this is not done in conjunction with the hardware or computational requirements which has led to some disparity with respect to methods that are feasible for integration and those that are not. Fortunately we can also find many promising hardware realizations that do allow the acceleration or an increase efficiency for these decoding methods. Although the more progressive deep learning methods still struggle with finding compact configurations [^47] initial results appear promising with respect to power efficiency [^48] due to digital scaling. However this is a common trend among integrated classifiers where power dissipation is on the order of several microwatt but due to complexity such a system requires several mm\\(^2\\) of silicon area for operating on tens of channels [^49] [^129]\cite{folding_}.
@@ -200,8 +200,8 @@ While these methods represent a corner stone for BMIs, it can be argued that car
 
 With that in mind we can interpret the current trend for monolithic integration of active electronics and neural electrodes. Fundamentally we know that in order to enhance the basic tasks seen in BMI experiments, a significantly larger number of neurons may be needed for recording. This is both from a reliability point of view as neurons will 'drop out' as tissue ages and inferring more degrees of freedom requires even better signal integrity. Moreover we are not definite in our current understanding of information encoding in relation to the anatomy of the brain. However scaling the current paradigm for neural recording platform will not allow implantation of micro-wires with external recording for very high channel counts. Both in terms of surgical feasibility and chronic stability of the system. The use of silicon probes with integrated CMOS devices have demonstrated superior viability for chronic implants with high density electrodes, flexible structures, drug delivery [^54], and hermetically sealed micro-packaging [^55]. In extension these devices are significantly more scalable due to wireless capability and on-chip compression or data analysis which can be attributed to translating advancements in system integration. In particular the fine control over micro-fabrication structural or chemical composition is enabling chronic stability with less abrasive lesion when inserted into neural tissue.
 
-{{< figure src="literature/probe1.pdf}" width="500" >}}
-{{< figure src="literature/probe2.pdf}" title="Figure 13: " width="500" >}}
+{{< figure src="literature/probe1.svg}" width="500" >}}
+{{< figure src="literature/probe2.svg}" title="Figure 13: " width="500" >}}
 
 
 Figure 13 shows the structure of current active probe technology where circuits can be integrated underneath the distributed array of contacts that are exposed to the tissue [^56]. Such a shank is capable of monitoring activity from multiple cortical layers of the brain simultaneously corresponding to various structural and functional neurons that exhibit different dynamics at each layer. In fact it typical to see electrode structures use very dense configurations such that we can be selective with regard to which neurons are decoded though electrode proximity. Currently the head stage extruding from the shank is of considerable size due to the contacts to external circuitry and possibly analogue to digital converters. Ideally this can be minimized by redesigning the instrumentation and allowing for only a few contacts that connect to a inductive link. It is important to point out that freely moving cortical probes with a reduced footprint appears to be the most significant factor for preventing haemorrhaging and the formation of scar tissue that impedes chronic utility of such a device[^18]. We can attribute significant improvements in chronic electrode behaviour with functional probes that leverage chemical agents in combination with micro-meter size incisions to reduce tissue damage [^57]. To a certain extent it is beneficial to have active recording electronics to be on the same order of scale as electrode structures. Such that electrodes can form in relatively arbitrary configuration from a fabrication standpoint and our data processing capacity would scale proportional to the number of recording sites in the system.
@@ -225,7 +225,7 @@ Here we shall discuss the novelties presented recent publications to review some
 
 The trend towards increased recording capacity emphasises the importance for careful sensor design that maintains adequate thermal dissipation. Particularly when current systems extensively perform processing on chip. It remains to be the case that electrode configurations like the Utah array [^62] are distributed over a volume of cortex while sensing take place on a two dimensional array of instrumentation circuits. Clearly fabrication technologies could provide 3D integration of sensor circuits. However this may actually exhibit worse thermal capacity than 2D integration due to reduced surface area per recording unit. The key requirement is then that integrated devices should realize very high 2D density in order to probe the different layers & columns of cortical tissue.
 
-{{< figure src="literature/sys_density.pdf}" title="Figure 15: System power density with respect to sensing area for state of the art recording systems." width="500" >}}
+{{< figure src="literature/sys_density.svg}" title="Figure 15: System power density with respect to sensing area for state of the art recording systems." width="500" >}}
 %
 
 In order to reveal the challenge of managing thermal capacity experienced by state of the art recording systems we have surveyed a number of sensor systems published over the past 5 years. This is summarized in Figure 15 which illustrates how well high density recording is achieved with respect to the thermal budget of 80mW/cm²[^68]. In particular the system power density is considered with respect to the sensor density. The power density is evaluated in terms of the total system power dissipation and the fabricated silicon die size which typically dissipates its heat into the surrounding tissue. On the other hand the sensor size is taken with respect to the size of integrated electrode pitch or the size of the corresponding instrumentation circuits in order to emulate the achievable electrode pitch.
@@ -255,35 +255,35 @@ Table 2: Performance specifications for integrated neural instrumentation system
 
 Here we highlight the digital electro physiology interface chips provided by Intan technologies as one of the few commercialized integrated instrumentation systems [^75]. These chips are the base line for numerous other advanced neural sensors. The mixed signal architecture it self can still be identified in newer systems. The on-chip configuration is relatively straightforward where there are 16-64 channels with differential inputs that are amplified and filtered by \\(3^{rd}\\) order low-pass filter. In addition to a combination of \\(1^{st}\\) order analogue and \\(1^{st}\\) order digital high-pass filter are used to reject low-frequency content. The digital back-end directly clocks the data converter as slave to sample the various channels. The key component to these systems is the robust simplicity and guided application that has accelerated the research for many groups.
 
-{{< figure src="literature/R2_IC.pdf}" width="500" >}}
-{{< figure src="literature/R2_SYS.pdf}" title="Figure 16: " width="500" >}}
+{{< figure src="literature/R2_IC.svg}" width="500" >}}
+{{< figure src="literature/R2_SYS.svg}" title="Figure 16: " width="500" >}}
 
 
 The multi channel device in [^76] is some of the earlier work that focuses explicitly on the miniaturization of analogue recording. This work was later improved upon in [^77] where a dual sample and hold structure was proposed to mitigate the class-A power-bandwidth trade off associated with the buffer driving the ADC by using two separate capacitor arrays. This system can be seen in Figure 16. More importantly this system introduced on-chip power management to that would allow a telemetry module to power the implant. There is also an attempt here for using the dynamic range at different supply voltages more effectively to marginally reduce the system power budget. By using a charge pump to drive the supply on stages that have a large output swing the low voltage component have reduced power requirement.
 
-{{< figure src="literature/R9_IC.pdf}" width="500" >}}
-{{< figure src="literature/R9_SYS.pdf}" title="Figure 17: " width="500" >}}
+{{< figure src="literature/R9_IC.svg}" width="500" >}}
+{{< figure src="literature/R9_SYS.svg}" title="Figure 17: " width="500" >}}
 
 
 The authors of [^71] introduce the conceptual hurdles and advantages of using a fully integrated active probe that is fabricated by post processing standard CMOS wafers. This system can be seen in Figure 17. Here the active electrodes are demonstrated to deal with the cross-coupling of high density electrode configuration and enabling a significant amount of multiplexing for electrode selection. Because we see the use of analogue voltage transmission across the chip the discussion addresses a number of limitations due to the limited drive capability of the active electrode structure. We may be quick to suggest alternative structures that does not suffer from such complications but it is difficult to avoid open-loop behaviour will not allow good linearity or matching drawbacks.
 
-{{< figure src="literature/R11_IC.pdf}" width="500" >}}
-{{< figure src="literature/R11_SYS.pdf}" title="Figure 18: " width="500" >}}
+{{< figure src="literature/R11_IC.svg}" width="500" >}}
+{{< figure src="literature/R11_SYS.svg}" title="Figure 18: " width="500" >}}
 
 
 The work in [^65] exemplifies an alternative to closed loop amplifier structures by performing direct quantization. This system can be seen in Figure 18. Similar to oversampling data converters this approach resolves a number of issues like the limited linearity of analogue blocks or variance in their characteristics. However these complications can now be seen in the feedback structure where the digital to analogue conversion requires fine linearity calibration in the feedback and most of the digital processing has a considerable dynamic range. This approach does well to leverage deep sub-micron CMOS.
 
-{{< figure src="literature/R7_IC.pdf}" width="500" >}}
-{{< figure src="literature/R7_SYS.pdf}" title="Figure 19: " width="500" >}}
+{{< figure src="literature/R7_IC.svg}" width="500" >}}
+{{< figure src="literature/R7_SYS.svg}" title="Figure 19: " width="500" >}}
 
 
 The system presented in [^64] by the same authors as  is exceptional because it demonstrated a fully integrated system on chip solution that can perform closed loop stimulation while processing neural activity. This system can be seen in Figure 19. Moreover the system integrates power regulation that adaptively scales the stimulator supply in order to maximize the efficiency of current stimulation. The embedded digital processing is capable of extracting spikes that are detected by a non-linear energy operator and evaluate long term firing rates as a form of data compression. Moreover the 65 nm CMOS technology allows this system to achieve a respectable power budget while performing extensive digital processing.
 
 \TFigure{
 	\centering
-	\subfigure[Fabricated device in 180 nm CMOS.]{\includegraphics[height=7cm]{literature/R6_IC.pdf}}
+	\subfigure[Fabricated device in 180 nm CMOS.]{\includegraphics[height=7cm]{literature/R6_IC.svg}}
 
-	\subfigure[Integrated system architecture.]{\includegraphics[height=6cm]{literature/R6_SYS.pdf}}
+	\subfigure[Integrated system architecture.]{\includegraphics[height=6cm]{literature/R6_SYS.svg}}
 	\caption[Neural recording system from the literature showing the fabricated and system level implementation.]{Proposed neural recording system from [^63] showing the fabricated and system level implementation.}
 	\label{fig:LT_R6}
 }
@@ -456,8 +456,8 @@ Alternatively we can apply chopping techniques to deal with these noise requirem
 
 In addition to basic chopping functionality, the performance can be further improved by providing closed loop feedback to actively cancel aggressors on top of filtering the resulting up modulated aggressors. This can be achieved in multiple ways and in some cases could improve linearity. One possible technique is using a DC-servo loop and another is performing ripple rejection both of which remove different components [^123]. Here we will consider the implementation of three such techniques that improve chopping performance that specifically have negligible power and area requirements. The considerations made here will be similar to that of [^124] [^125] but with explicit focus on area reduction.
 
-{{< figure src="technical_1/T1_CAMP.pdf}" width="500" >}}
-{{< figure src="technical_1/T1_CAMP_T.pdf}" title="Figure 24: Proposed compact chopper stabilized neural amplifier topology. " width="500" >}}
+{{< figure src="technical_1/T1_CAMP.svg}" width="500" >}}
+{{< figure src="technical_1/T1_CAMP_T.svg}" title="Figure 24: Proposed compact chopper stabilized neural amplifier topology. " width="500" >}}
 
 
 Figure 24 shows the proposed configuration that promises a significant reduction in input capacitance and the required silicon area. This configuration has two gain stages where the first stage A1 is a wideband low noise stage and the second provides A2 low pass filtering as motivated by Section 20. This enables the rejection of flicker noise from the first stage completely and effectively shifts the corner frequency of the second stage by gain of first stage squared. Moreover this the configuration does not require auxiliary integrators provide feedback on the capacitive feedback network around A1 that would lead to increased complexity.
@@ -503,22 +503,22 @@ The components that improve bandwidth efficiency are detailed in Equation 13. Re
 
 
 
-{{< figure src="technical_1/T1_T1AMP.pdf}" width="500" >}}
-{{< figure src="technical_1/AMP_Feedback.pdf}" title="Figure 27: Schematic showing circuit implementation of the proposed compact neural amplifier. " width="500" >}}
+{{< figure src="technical_1/T1_T1AMP.svg}" width="500" >}}
+{{< figure src="technical_1/AMP_Feedback.svg}" title="Figure 27: Schematic showing circuit implementation of the proposed compact neural amplifier. " width="500" >}}
 
 
 Figure 27 shows the transistor level implementation of the topology used in Figure 24. The first gain stage is a highly compact complementary structure that exhibits exceptional noise performance. The second stage transistor implementation is the high gain two-stage topology discussed in Section 22. The variable gain configuration is facilitated by the digital controlled low leakage switches that connect a selected set of capacitors in feedback. This particular configuration provides more generic instrumentation of the 1 Hz to 6 kHz bandwidth. It is well known that the analogue filters introduce frequency dependent group delay near the pole locations which has been shown to degrade processing capabilities of spike sorting techniques [^129]. By placing the high pass pole well inside of the LFP band the spike wave-forms exhibit less distortion due to analogue filtering and is instead filtered using linear phase filters in the digital domain that do not suffer from such drawbacks.
 
 The reset mechanism on instrumentation amplifiers using pseudo-resistive elements is essential. Either during stimulation, start-up, or amplifier saturation the charge across the feedback capacitor must be neutralized before correct operation can begin. This mechanism allows the rejection of various distortion components that would other wise corrupt the latent signal integrity or digital signal processing. However there is an inherent problem with these reset switches due to the parasitic charge injection induced on the intermediate semi-floating nodes. Moreover if these elements are cascaded to increase resistance or dynamic range these sensitive floating nodes are also increased thereby building up more residue charge. A significant amount of charge can introduce a permanent reset artefact after reset as this charge redistributes internally inside the resistor. The proposed solution to this problem is by minimizing the floating nodes and guarding the floating N-Well from injected noise. This should allow  a very large pseudo resistance for a sub-Hz high pass cut off frequency while maintaining exceptional reset characteristics. We minimize the resulting charge residue by absorbing the leaky diode currents and residues into the guarding amplifier. Now there will be some instantaneous off-set as the reset signal injects charge directly onto the feedback capacitor but this can be quite small when using small switches. The drawback here is that there may exist a very slow drift on the order of \\(V/sec\\) from the guarding amplifiers due to $V_{os}   R_{diode}$. But simple digital assistance will suffice in eliminating this concern by periodically resetting the structure and cancelling the residue off-set. This re-introduces the high pass pole at a well defined location depending on the periodicity of the reset signal and reconstructing signal in the digital domain [^130].
 
-{{< figure src="technical_1/AMP_Label.pdf}" width="500" >}}
-{{< figure src="technical_1/AMP_Chip.pdf}" title="Figure 28: Physical implementation of amplifier using a 6-metal $0.18   \mu m$ CMOS process measuring $75 \times 82   \mu m^2$ in size. " width="500" >}}
+{{< figure src="technical_1/AMP_Label.svg}" width="500" >}}
+{{< figure src="technical_1/AMP_Chip.svg}" title="Figure 28: Physical implementation of amplifier using a 6-metal $0.18   \mu m$ CMOS process measuring $75 \times 82   \mu m^2$ in size. " width="500" >}}
 
 
 The floor plan for this implementation is annotated in Figure 28. The typical focus for analogue layout is achieving good matching for the input transistors and capacitors to minimise off-set or undesirable signal coupling. In this case the chopper introduces a lot switching that is difficult isolate from the signal so instead we focused on minimising parasitics of the clocked nets. The common mode feedback on the second stage uses a switched capacitor and wide band amplifier to ensure accurate common mode settling without deteriorating linearity. This is important because the ADC can be quite sensitive to the sampled common mode resulting in a reduced precision if there is an unexpected offset on the sampled output. Simulated performance of the implemented topology is shown in Figure 29. This compact configuration can achieve an input referred noise of $5.6 \mu V_{rms}$ over the specified bandwidth with a noise corner frequency of 20 Hz. The performance is detailed with a clear reduction in size can be observed when compared to other chopper systems in Table 5. The total gain is \\(421 V/V\\) for this particular configuration which can be adjusted using the digital calibration bits integrated into the structure allowing different gain and power settings. The maximum available gain setting is shown in Figure 30.
 
-{{< figure src="technical_1/Noise_PLO.pdf}" width="500" >}}
-{{< figure src="technical_1/Amp_Thd.pdf}" title="Figure 29:  Post layout simulated results of the proposed instrumentation circuit. " width="500" >}}
+{{< figure src="technical_1/Noise_PLO.svg}" width="500" >}}
+{{< figure src="technical_1/Amp_Thd.svg}" title="Figure 29:  Post layout simulated results of the proposed instrumentation circuit. " width="500" >}}
 
 
 
@@ -626,8 +626,8 @@ $$  P_{fir} = \underbrace{2^{K}}_{OSR}   \underbrace{( K + \log_{2}(K))}_{Quanti
 
 Collecting these terms for each topology will equate to expressions that typically have scalar dependencies on technology or implementation which we must make a set of reasonable assumptions for.  The literature will indicate numerous means by which each component can be reduced through specialized logic cells, adaptive comparator power allocation, or power saving switching methods. Our particular interest lies with the dependency on N that will imply the effectiveness of a certain topology for a given dynamic range requirement. In addition this familiarizes us with specific factors fundamental to power dissipation with respect to resolution.
 
-{{< figure src="technical_1/P_TOP_N.pdf}" width="500" >}}
-{{< figure src="technical_1/P_TOP_A.pdf}" title="Figure 34:  Summary of the FOM (\\(P_{sys}/2^{N} f_s\\)) for each topology with respect to different resolution requirements. " width="500" >}}
+{{< figure src="technical_1/P_TOP_N.svg}" width="500" >}}
+{{< figure src="technical_1/P_TOP_A.svg}" title="Figure 34:  Summary of the FOM (\\(P_{sys}/2^{N} f_s\\)) for each topology with respect to different resolution requirements. " width="500" >}}
 
 
 Figure 34 presents the expected merit for each topology as the target resolution is varied. Without consideration for area, there is a clear power advantage for the dynamic SAR structure mediated primarily by the fact that the comparator does not have settling associated tolerance. This is the main reason why the pre-amp topology requires a proportionally increased bandwidth/power as resolution is increased. What stands out is that the \\(\Delta\Sigma\\) structure has a power dependency $\propto   2^{3N}$ for achieving the required input referred noise in contrast to more conventional dependency of \\(2^{2N}\\). The mechanism behind this is due to the SAR quantization that reduces the signal input range which needs to be recovered to achieve the correct integration factors. Moreover the over sampling ratio increases simultaneously which has an overall multiplicative effect. Clearly the resolution of the SAR quantizer should only perform a few conversion that put the residue in the linear range of the loop filter and let the modulator perform most of the quantization effort. When all topologies are using the same unit capacitor, this result demonstrates that for \\(N < 5\\) & \\(N > 14\\) the \\(\Delta\Sigma\\) topology becomes strictly unfavourable in terms of power but performs comparably with respect to power efficiency for \\(N \approx 10\\). Taking the FOM area product by considering the capacitors in terms of \\(\Box\\) units the advantage of the \\(\Delta\Sigma\\) topology becomes more obvious. For the precision significant to neural recording, \\(8<N<12\\), the hybrid structure consistently grantees a more compact configuration by a factor of 10.
@@ -646,22 +646,22 @@ Considering the design space of the \\(\Delta\Sigma\\)SAR structure in more deta
 
 Extending the conventional SAR structure to perform sigma delta modulation is achieved with relatively little changes to the overall topology. The main difference is that during the last phase of SAR conversion a register must be toggled that switches in the integrators intermediate to the comparator. Simultaneously the \\(V\Sigma\Delta\pm\\) capacitors are directly connected to the comparator bipolar output instead of the common mode voltage \\(VCM\\) for differential feedback. This configuration is integrated on chip and performs 7 bits of differential SAR quantization with another 5 bits resolved by the noise shaping modulator with an over sampling rate of 32. At the system level, 4 analogue recording channels will be multiplexed to the input of the ADC which implies sampling rate of \\(100 kS/s\\) is required to sample each output at \\(25 kS/s\\).
 
-{{< figure src="technical_1/SAR_Arch.pdf}" width="500" >}}
-{{< figure src="technical_1/SAR_Logic.pdf}" title="Figure 37: Schematic configuration of the top level control for the \\(\Delta\Sigma\\)SAR data converter." width="500" >}}
+{{< figure src="technical_1/SAR_Arch.svg}" width="500" >}}
+{{< figure src="technical_1/SAR_Logic.svg}" title="Figure 37: Schematic configuration of the top level control for the \\(\Delta\Sigma\\)SAR data converter." width="500" >}}
 
 
 Figure 37 shows the top level configuration of this data converter. By using a specialized register logic slice a small reduction in complexity is achieved in addition to the mitigation of timing issues typical with the conventional self clocking register configuration. This topology uses a bottom plate sampling strategy to neutralize the effect of parasitics and common mode comparator nonlinearities while operating at 1.2V with a 10MHz clock frequency. Although there are only \\(N-K+OSR\\) active phases, settling the output of the recording amplifiers on to the capacitor array will require several cycles because of the band limited behaviour present in the driving stage.
 
 The implementation of the capacitive DAC and second order feed-forward integrator are shown in Figure 37. This configuration also opts to scale the voltage reference for the LSB in order to reduce the total number of capacitor required. As the capacitor array is implemented using CMIM devices the 7 bit differential structure with a split capacitor for \\(M=3\\) will grantee 10.1b for a confidence interval of \\(3\sigma\\) using Equation 16 and process documentation parameters that show a $8\times8 \mu m$ has \\(0.23 %\\) mismatch induced standard deviation. The reasoning for this configuration is that we are guaranteed \\(>9.5 bits\\) without calibration and will allow \\(>12 bits\\) with calibration. For either case the accuracy is sufficient for recording LFP and EAP signals simultaneously. This result was also confirmed with monte-carlo analysis using foundry supplied PSP models.
 
-{{< figure src="technical_1/T1_SDSAR_CDAC.pdf}" width="500" >}}
-{{< figure src="technical_1/T1_SDSAR_INT.pdf}" title="Figure 38: Schematic implementation of the \\(\Delta\Sigma\\)SAR structure. " width="500" >}}
+{{< figure src="technical_1/T1_SDSAR_CDAC.svg}" width="500" >}}
+{{< figure src="technical_1/T1_SDSAR_INT.svg}" title="Figure 38: Schematic implementation of the \\(\Delta\Sigma\\)SAR structure. " width="500" >}}
 
 
 The integrator topology primarily deals with the contrasting bandwidth requirement of the SAR operation and the sigma delta integration for the first stage. Particularly when taking the SAR decisions at the oversampled clock the first stage can only provide wideband gain if the capacitor is switched out and a resistive element is used instead. The circuit complexity can be dramatically reduced by using triode region transistors that regulate the PMOS biasing current for a well defined common mode. Because these transistor can be large in area they could slow down the maximum SAR speed. To avoid this the CMFB circuit is semi open loop during the SAR quantization leading to an increase bandwidth by using the common mode voltage that preserved on the integration capacitor. Also by switching the biasing current of the analogue summing stage a constant common mode can be presented to the comparator input thereby reducing any off-set disparity between the two operation phases.
 
-{{< figure src="technical_1/ADC_Label.pdf}" width="500" >}}
-{{< figure src="technical_1/ADC_Chip.pdf}" title="Figure 39: Physical implementation of ADC using a 6-metal $0.18   \mu m$ CMOS process measuring $93 \times 147   \mu m^2$ in size." width="500" >}}
+{{< figure src="technical_1/ADC_Label.svg}" width="500" >}}
+{{< figure src="technical_1/ADC_Chip.svg}" title="Figure 39: Physical implementation of ADC using a 6-metal $0.18   \mu m$ CMOS process measuring $93 \times 147   \mu m^2$ in size." width="500" >}}
 
 
 Figure 39 shows the fabricated structure of the ADC. Since the capacitors are placed on top of the active circuits this floor plan distances the integrators and the MSB capacitors to physically isolate the digital switching noise sources. A number of shielding structures are employed to improve post layout performance. There include various guard rings and isolating N-wells but due to the proximity of the digital switching the most effective strategy is appropriately orienting fully differential structures in order to equalize the coupling components. Here metal layers 1-3 are used for transistor interconnect, layers 5-6 for the capacitive DAC, and layer 4 is interposed in order to shield the two sections while connected to the common mode voltage. This is because the transient fluctuations on \\(V_{cm}\\) are only due to mismatch and should be the most quiet reference in the system with large capacitive loading.
@@ -673,8 +673,8 @@ In order to take advantage of this structure we reveal two distinguishing charac
 
 The calibration technique discussed is abstractly represented by Figure 40 where there are two IIR control loops with the coefficients \\(a_1\\) and \\(b_1\\). In part this loop performs normal operation by evaluating the signal quantization \\(Q_{sig}\\). This is done adding the SAR quantization with calibrated weights and decimating the oversampled residue with a \\(32^{nd}\\) order FIR window quantized with 8 bit coefficients for each sample. Here \\(a_{1}\\) simply has to be small enough to track the signal and reject noisy components to determine $\Delta Q$. $\Delta Q$ represents DNL nonlinearities that are used to adjust the coefficients \\(K_{DAC}\\). The multiplication operator is in fact a bitwise evaluation that indicates if a coefficient needs to be adjusted due to a correlation between $\Delta Q$ and a change in that bit. Hence \\(b_{1}\\) needs to be small enough to prevent level dependent tuning and \\(V_{test}\\) should be a full range slow varying signal.
 
-{{< figure src="technical_1/adc_UC.pdf}" width="500" >}}
-{{< figure src="technical_1/adc_CC.pdf}" title="Figure 41: INL Plots illustrating the mismatch artefact reduction due to calibration." width="500" >}}
+{{< figure src="technical_1/adc_UC.svg}" width="500" >}}
+{{< figure src="technical_1/adc_CC.svg}" title="Figure 41: INL Plots illustrating the mismatch artefact reduction due to calibration." width="500" >}}
 
 
 The improvement in INL is evident in Figure 41 due to the calibration mechanism with \\(a_1=1/4\\) and \\(b_1=2^{-8}\\). The close interaction between INL & DNL errors over the full dynamic range for a capacitive array in addition to the sigma delta loop's capability of quantizing $\pm 2   LSB$ of the array allows this method to converge accurately. Here it is observed that the calibration improves the quantization accuracy by two additional bits.
@@ -683,7 +683,7 @@ The improvement in INL is evident in Figure 41 due to the calibration mechanism 
 
 
 {{< figure src="technical_1/ADC_TEST.jpg}" width="500" >}}
-{{< figure src="technical_1/adc_TI.pdf}" title="Figure 43:  Testing setup used for characterizing the ADC." width="500" >}}
+{{< figure src="technical_1/adc_TI.svg}" title="Figure 43:  Testing setup used for characterizing the ADC." width="500" >}}
 
 
 Figure 43 shows the test bench used during device characterization. The saleae logic device is a digital probe that offers 100 MS/s digital signal acquisition for measurements of up to 10 seconds. Here the raspberry pi module simply provides real time interaction with the device configuration using automated spi control and a graphical user interface that will indicate ADC precision based on the selected operation. This allows us to tweak the operating conditions and find which noise sources are disturbing the configuration. The analogue bias \\(I_{BIAS}\\) is generated by a 2602A Keithley system source meter and fed in using a guarded triax cable. The differential input signals are generated using a Agilent 33522A arbitrary waveform generator and fed to the ADC input using BNC cables.
@@ -737,8 +737,8 @@ Here \\(P_{unit}\\) is simply evaluated from Equation 6 and leads to an area req
 
 Lets take \\(A_{unit}\\) as some unit capacitance size that allows the deviation of gain due to mismatch to fall inside the confidence interval. In order to realize Equation 26, each stage has its power and input referred noise reduced by accumulated gain for the preceding stages. This result presents us with the trend illustrated in Figure 47 where it appears that in many stage systems it is relatively beneficial to redistribute the resources to the front-end for a reduction in overall power. However when the number of stages is three or less we observe the increase in area can diminish this improvement for high gain system requirements.
 
-{{< figure src="technical_1/NM_NP.pdf}" width="500" >}}
-{{< figure src="technical_1/NM_PAP.pdf}" title="Figure 47: Normalized resource improvements for \\(\alpha\\) with respect the case when \\(\alpha=1\\) for each configuration. " width="500" >}}
+{{< figure src="technical_1/NM_NP.svg}" width="500" >}}
+{{< figure src="technical_1/NM_PAP.svg}" title="Figure 47: Normalized resource improvements for \\(\alpha\\) with respect the case when \\(\alpha=1\\) for each configuration. " width="500" >}}
 
 
 So far we have neglected some aspects to the design consideration. The first is the multiplicative increase standard deviation as N is increases and the sensitivity to variance being inversely proportional to closed loop gain. Here we can account for the increased variance by proportionally increasing \\(A_{unit}\\) in order to neutralize this increase according to Equation 28.
@@ -760,8 +760,8 @@ $$  A_{Total} = A_{filt} + A_{Gain} + A_{ADC}  \text{and}  P_{Total} = P_{Amplif
 
 Taking an appropriate set of parameter values, the system of relations is exemplified in Figure 48 with respect to the dependency on the supply voltage, \\(Vdd\\). As illustrated there are two domains when considering the area requirement. For small \\(Vdd\\) the sampling & filtering noise requirements overwhelm the design particularly in this case if \\(\alpha\\) is not taken small enough and a second order roll off is needed. When there is more voltage overhead available we observe reliably matching in input dynamic range of the ADC is the dominating factor.
 
-{{< figure src="technical_1/NM_TSNA.pdf}" width="500" >}}
-{{< figure src="technical_1/NM_TSNAP.pdf}" title="Figure 48: Analogue resource relations with respect to different supply voltages. " width="500" >}}
+{{< figure src="technical_1/NM_TSNA.svg}" width="500" >}}
+{{< figure src="technical_1/NM_TSNAP.svg}" title="Figure 48: Analogue resource relations with respect to different supply voltages. " width="500" >}}
 
 
 The area power product also tells an interesting story. When \\(Vdd\\) is larger than 1 V a clear proportional dependency on power is apparent that is mostly related to the total gain & noise requirements of the system because the ADC is not the limiting factor. However for small supply voltage the power dissipation requirement is more closely related to the lower noise quantization requirements presented by the SD-SAR topology. We should be careful because certain circuit topologies are simply not viable below specific supply voltages and as a result it would no be possible to achieve a NEF smaller than 2. Figure 48 also indicates when particular topologies are viable specific to the $0.18   \mu m$ CMOS process where $V_{th} \approx 350 mV$. That said it is likely a system can be designed with \\(0.6 V\\) supply in order to achieve significant power and area savings. The main challenge will be achieving acceptable total harmonic distortion as the supply will not easily allow cascoding transistors. Particularly sub-threshold transistors suffer from \\(Gm\\) nonlinearity as a function of \\(e^{\frac{-V_{DS}}{U_T}}\\) that can only be compensated by increased loop gain and multi-stage topologies. Since it is implementation dependent, it is difficult to quantify what this increase in area an power overhead this will result in. We can assert that \\(60 dB\\) precision with instrumentation has very significant diminishing returns when the conventional design approaches a \\(2 V_{th}\\) supply. The reader can find more details in regard to these comparisons in Section 60.
@@ -988,26 +988,26 @@ This section will detail the signal characteristics found in the data sets used 
 
 As was mentioned used evaluation recordings contains different sets of synthetically generated spike trains for three classes of neurons each with different spike morphologies. The spike shapes are based on recordings with background noise of similar spikes randomly distributed in time at lower amplitudes. While the these datasets provide time stamp data for when the individual spike wave forms can be found in the recording they do not introduce the low-frequency content that is expected from typical recording. Here we have extracted these low frequency variations from real recordings with a high order FIR filter and added them to the synthetic data. While this will not greatly effect the classification results it assures us that the proposed methods are not inadvertently sensitive to low-frequency components.
 
-{{< figure src="appendix/synthetic_rawa.pdf}" width="500" >}}
-{{< figure src="appendix/synthetic_rawb.pdf}" title="Figure 106: Example of synthetic data derived from typical neural recordings." width="500" >}}
+{{< figure src="appendix/synthetic_rawa.svg}" width="500" >}}
+{{< figure src="appendix/synthetic_rawb.svg}" title="Figure 106: Example of synthetic data derived from typical neural recordings." width="500" >}}
 
 
 Fig. 106 depicts the typical recordings that are used before preprocessing. Whether we extract the finer signal components in the digital domain or in the analogue domain it is necessary to carefully consider the possible dynamic range. Particularly as buffer overflows are not explicitly modelled unless hardware specific data types are used.
 
-{{< figure src="appendix/synthetic_filta.pdf}" width="500" >}}
-{{< figure src="appendix/synthetic_filtb.pdf}" title="Figure 107: Filtered components of spiking activity and detection operator output." width="500" >}}
+{{< figure src="appendix/synthetic_filta.svg}" width="500" >}}
+{{< figure src="appendix/synthetic_filtb.svg}" title="Figure 107: Filtered components of spiking activity and detection operator output." width="500" >}}
 
 
 Once the spiking activity is extracted it may appear like that in Fig. 107. Because spikes have a board bandwidth relative to the sampling rate, the white noise is typically more evident than what is presented. Alongside the spiking waveform we present the energy operator. Here there is a clear difference in how apparent the noise is in contrast to the spike amplitude. This disparity improves the more energy each spike had in the high-frequency bands.
 
-{{< figure src="appendix/spike_analoga.pdf}" width="500" >}}
-{{< figure src="appendix/spike_digitala.pdf}" title="Figure 108:  Comparison of digital and analogue pre-filtering methods. " width="500" >}}
+{{< figure src="appendix/spike_analoga.svg}" width="500" >}}
+{{< figure src="appendix/spike_digitala.svg}" title="Figure 108:  Comparison of digital and analogue pre-filtering methods. " width="500" >}}
 
 
 Fig. 108 compares the characteristic difference between analogue and digital filtering strategies. While we typically expect the group delay is well controlled in digital systems the analogue implementation exhibits more systematic rejection of out of band components. Low order FIR structures in particular suffer from limited leaking these components but allow finer adjustments that accentuate separating features in the signal.
 
-{{< figure src="appendix/spike_analogb.pdf}" width="500" >}}
-{{< figure src="appendix/spike_digitalb.pdf}" title="Figure 109:  Comparison of digital and analogue detection methods." width="500" >}}
+{{< figure src="appendix/spike_analogb.svg}" width="500" >}}
+{{< figure src="appendix/spike_digitalb.svg}" title="Figure 109:  Comparison of digital and analogue detection methods." width="500" >}}
 
 
 Similarly Fig. 109 compares the digital and analogue realizations of the detection operators. Since we only use linear blocks to realize the analogue operator we lose the suppression of white noise. Moreover the digital operator can fine tune delay used to correlate derivative with amplitude components allowing for a very explicit single maximum in each waveform.
@@ -1281,8 +1281,8 @@ end
 [^57]: T.D.Y. Kozai, N.B. Langhals, P.R. Patel, X.Deng, H.Zhang, K.L. Smith,  J.Lahann, N.A. Kotov, and D.R. Kipke, ''Ultrasmall implantable composite  microelectrodes with bioactive surfaces for chronic neural interfaces,''  Nature Materials, vol.11, pp. 1065--1073, December 2012. [Online]:  http://dx.doi.org/10.1038/nmat3468
 [^58]: D.A. Schwarz, M.A. Lebedev, T.L. Hanson, D.F. Dimitrov, G.Lehew, J.Meloy,  S.Rajangam, V.Subramanian, P.J. Ifft, Z.Li, A.Ramakrishnan, A.Tate,  K.Z. Zhuang, and M.A.L. Nicolelis, ''Chronic, wireless recordings of  large-scale brain activity in freely moving rhesus monkeys,'' Nature  Methods, vol.11, pp. 670--676, April 2014. [Online]:  http://dx.doi.org/10.1038/nmeth.2936
 [^59]: P.Ruther, S.Herwik, S.Kisban, K.Seidl, and O.Paul, ''Recent progress in  neural probes using silicon mems technology,'' IEEJ Transactions on  Electrical and Electronic Engineering, vol.5, no.5, pp. 505--515, 2010.  [Online]: http://dx.doi.org/10.1002/tee.20566
-[^60]: ibitem3d-printH.-W. Kang, S.J. Lee, I.K. Ko, C.Kengla, J.J. Yoo, and A.Atala, ''A 3d  bioprinting system to produce human-scale tissue constructs with structural  integrity,'' Nature Biotechnology, vol.34, pp. 312--319, March 2016.  [Online]: http://dx.doi.org/10.1038/nbt.3413
-[^61]: ibitemdistrib-electC.Xie, J.Liu, T.-M. Fu, X.Dai, W.Zhou, and C.M. Lieber,  ''Three-dimensional macroporous nanoelectronic networks as minimally invasive  brain probes,'' Nature Materials, vol.14, pp. 1286--1292, May 2015.  [Online]: http://dx.doi.org/10.1038/nmat4427
+[^60]: H.-W. Kang, S.J. Lee, I.K. Ko, C.Kengla, J.J. Yoo, and A.Atala, ''A 3d  bioprinting system to produce human-scale tissue constructs with structural  integrity,'' Nature Biotechnology, vol.34, pp. 312--319, March 2016.  [Online]: http://dx.doi.org/10.1038/nbt.3413
+[^61]: C.Xie, J.Liu, T.-M. Fu, X.Dai, W.Zhou, and C.M. Lieber,  ''Three-dimensional macroporous nanoelectronic networks as minimally invasive  brain probes,'' Nature Materials, vol.14, pp. 1286--1292, May 2015.  [Online]: http://dx.doi.org/10.1038/nmat4427
 [^62]: R.R. Harrison, P.T. Watkins, R.J. Kier, R.O. Lovejoy, D.J. Black,  B.Greger, and F.Solzbacher, ''A low-power integrated circuit for a wireless  100-electrode neural recording system,'' IEEE Journal of Solid-State  Circuits, vol.42, no.1, pp. 123--133, Jan 2007. [Online]:  http://dx.doi.org/10.1109/JSSC.2006.886567
 [^63]: J.Guo, W.Ng, J.Yuan, S.Li, and M.Chan, ''A 200-channel  area-power-efficient chemical and electrical dual-mode acquisition ic for the  study of neurodegenerative diseases,'' IEEE Transactions on  Biomedical Circuits and Systems, vol.10, no.3, pp. 567--578, June 2016.  [Online]: http://dx.doi.org/10.1109/TBCAS.2015.2468052
 [^64]: W.Biederman, D.J. Yeager, N.Narevsky, J.Leverett, R.Neely, J.M. Carmena,  E.Alon, and J.M. Rabaey, ''A 4.78 mm 2 fully-integrated neuromodulation soc  combining 64 acquisition channels with digital compression and simultaneous  dual stimulation,'' IEEE Journal of Solid-State Circuits, vol.50,  no.4, pp. 1038--1047, April 2015. [Online]:  http://dx.doi.org/10.1109/JSSC.2014.2384736
@@ -1340,7 +1340,7 @@ end
 [^116]: C.Qian, J.Parramon, and E.Sanchez-Sinencio, ''A micropower low-noise neural  recording front-end circuit for epileptic seizure detection,'' IEEE  Journal of Solid-State Circuits, vol.46, no.6, pp. 1392--1405, June 2011.  [Online]: http://dx.doi.org/10.1109/JSSC.2011.2126370
 [^117]: X.Zou, L.Liu, J.H. Cheong, L.Yao, P.Li, M.-Y. Cheng, W.L. Goh,  R.Rajkumar, G.Dawe, K.-W. Cheng, and M.Je, ''A 100-channel 1-mw  implantable neural recording ic,'' IEEE Transactions on Circuits and  Systems---Part I: Regular Papers, vol.60, no.10, pp. 2584--2596, October  2013. [Online]: http://dx.doi.org/10.1109/TCSI.2013.2249175
 [^118]: V.Majidzadeh, A.Schmid, and Y.Leblebici, ''Energy efficient low-noise neural  recording amplifier with enhanced noise efficiency factor,'' IEEE  Transactions on Biomedical Circuits and Systems, vol.5, no.3, pp.  262--271, June 2011. [Online]:  http://dx.doi.org/10.1109/TBCAS.2010.2078815
-[^119]: ibitemQ-basedC.C. Enz and E.A. Vittoz, Charge-based MOS transistor modeling: the EKV  model for low-power AND RF IC design.\hskip 1em plus 0.5em minus 0.4emelax  John Wiley & Sons, August 2006. [Online]:  http://eu.wiley.com/WileyCDA/WileyTitle/productCd-0470855452.html
+[^119]: C.C. Enz and E.A. Vittoz, Charge-based MOS transistor modeling: the EKV  model for low-power AND RF IC design. John Wiley & Sons, August 2006. [Online]:  http://eu.wiley.com/WileyCDA/WileyTitle/productCd-0470855452.html
 [^120]: Y.Yasuda, T.-J.K. Liu, and C.Hu, ''Flicker-noise impact on scaling of  mixed-signal cmos with hfsion,'' IEEE Transactions on Electron  Devices, vol.55, no.1, pp. 417--422, January 2008. [Online]:  http://dx.doi.org/10.1109/TED.2007.910759
 [^121]: S.-Y. Wu, C.Lin, M.Chiang, J.Liaw, J.Cheng, S.Yang, M.Liang,  T.Miyashita, C.Tsai, B.Hsu, H.Chen, T.Yamamoto, S.Chang, V.Chang,  C.Chang, J.Chen, H.Chen, K.Ting, Y.Wu, K.Pan, R.Tsui, C.Yao,  P.Chang, H.Lien, T.Lee, H.Lee, W.Chang, T.Chang, R.Chen, M.Yeh,  C.Chen, Y.Chiu, Y.Chen, H.Huang, Y.Lu, C.Chang, M.Tsai, C.Liu,  K.Chen, C.Kuo, H.Lin, S.Jang, and Y.Ku, ''A 16nm finfet cmos technology  for mobile soc and computing applications,'' in IEEE Proceedings of  the International Electron Devices Meeting, December 2013, pp. 9.1.1--9.1.4.  [Online]: http://dx.doi.org/10.1109/IEDM.2013.6724591
 [^122]: L.B. Leene, Y.Liu, and T.G. Constandinou, ''A compact recording array for  neural interfaces,'' in IEEE Proceedings of the Biomedical Circuits  and Systems Conference, October 2013, pp. 97--100. [Online]:  http://dx.doi.org/10.1109/BioCAS.2013.6679648
@@ -1361,7 +1361,7 @@ end
 [^137]: Y.Chae, K.Souri, and K.A.A. Makinwa, ''A 6.3$ \mu$w 20$ $bit incremental  zoom-adc with 6 ppm inl and 1 $\mu$v offset,'' IEEE Journal of  Solid-State Circuits, vol.48, no.12, pp. 3019--3027, Dec 2013. [Online]:  http://dx.doi.org/10.1109/JSSC.2013.2278737
 [^138]: Y.S. Shu, L.T. Kuo, and T.Y. Lo, ''An oversampling sar adc with dac mismatch  error shaping achieving 105db sfdr and 101db sndr over 1khz bw in 55nm  cmos,'' in IEEE Proceedings of the International Solid-State Circuits  Conference, January 2016, pp. 458--459. [Online]:  http://dx.doi.org/10.1109/ISSCC.2016.7418105
 [^139]: P.Harpe, E.Cantatore, and A.van Roermund, ''An oversampled 12/14b sar adc  with noise reduction and linearity enhancements achieving up to 79.1db  sndr,'' in IEEE Proceedings of the International Solid-State Circuits  Conference, February 2014, pp. 194--195. [Online]:  http://dx.doi.org/10.1109/ISSCC.2014.6757396
-[^140]: ibitemchrch-turingM.Braverman, J.Schneider, and C.Rojas, ''Space-bounded church-turing thesis  and computational tractability of closed systems,'' Physical Review  Letters, vol. 115, August 2015. [Online]:  http://link.aps.org/doi/10.1103/PhysRevLett.115.098701
+[^140]: M.Braverman, J.Schneider, and C.Rojas, ''Space-bounded church-turing thesis  and computational tractability of closed systems,'' Physical Review  Letters, vol. 115, August 2015. [Online]:  http://link.aps.org/doi/10.1103/PhysRevLett.115.098701
 [^141]: M.Verhelst and A.Bahai, ''Where analog meets digital: Analog-to-information  conversion and beyond,'' IEEE Solid-State Circuits Magazine, vol.7,  no.3, pp. 67--80, September 2015. [Online]:  http://dx.doi.org/10.1109/MSSC.2015.2442394
 [^142]: H.A. Marblestone, M.B. Zamft, G.Y. Maguire, G.M. Shapiro, R.T. Cybulski,  I.J. Glaser, D.Amodei, P.B. Stranges, R.Kalhor, A.D. Dalrymple, D.Seo,  E.Alon, M.M. Maharbiz, M.J. Carmena, M.J. Rabaey, S.E. Boyden, M.G.  Church, and P.K. Kording, ''Physical principles for scalable neural  recording,'' Frontiers in Computational Neuroscience, vol.7, no. 137,  2013. [Online]:  http://www.frontiersin.org/computational_neuroscience/10.3389/fncom.2013.00137
 [^143]: L.Traver, C.Tarin, P.Marti, and N.Cardona, ''Adaptive-threshold neural  spike by noise-envelope tracking,'' Electronics Letters, vol.43,  no.24, pp. 1333--1335, November 2007. [Online]:  http://dx.doi.org/10.1049/el:20071631
@@ -1386,7 +1386,7 @@ end
 [^162]: R.E. Matick and S.E. Schuster, ''Logic-based edram: Origins and rationale for  use,'' IBM Journal of Research AND Development, vol.49, no.1, pp.  145--165, January 2005. [Online]: http://dx.doi.org/10.1147/rd.491.0145
 [^163]: R.Nair, ''Evolution of memory architecture,'' Proceedings of the  IEEE, vol. 103, no.8, pp. 1331--1345, August 2015. [Online]:  http://dx.doi.org/10.1109/JPROC.2015.2435018
 [^164]: C.E. Molnar and I.W. Jones, ''Simple circuits that work for complicated  reasons,'' in IEEE Proceedings of the International Symposium on  Advanced Research in Asynchronous Circuits and Systems, 2000, pp. 138--149.  [Online]: http://dx.doi.org/10.1109/ASYNC.2000.836995
-[^165]: ibitemBN-formH.Schorr, ''Computer-aided digital system design and analysis using a register  transfer language,'' IEEE Transactions on Electronic Computers, vol.  EC-13, no.6, pp. 730--737, December 1964. [Online]:  http://dx.doi.org/10.1109/PGEC.1964.263907
+[^165]: H.Schorr, ''Computer-aided digital system design and analysis using a register  transfer language,'' IEEE Transactions on Electronic Computers, vol.  EC-13, no.6, pp. 730--737, December 1964. [Online]:  http://dx.doi.org/10.1109/PGEC.1964.263907
 [^166]: D.Wang, A.Rajendiran, S.Ananthanarayanan, H.Patel, M.Tripunitara, and  S.Garg, ''Reliable computing with ultra-reduced instruction set  coprocessors,'' IEEE Micro, vol.34, no.6, pp. 86--94, November  2014. [Online]: http://dx.doi.org/10.1109/MM.2013.130
 [^167]: ''Msp430g2x53 mixed signal microcontroller - data sheet,'' Texas Instruments  Incorporated, Dallas, Texas, pp. 403--413, May 2013. [Online]:  http://www.ti.com/lit/ds/symlink/msp430g2553.pdf
 [^168]: F.L. Yuan, C.C. Wang, T.H. Yu, and D.Marković, ''A multi-granularity fpga  with hierarchical interconnects for efficient and flexible mobile  computing,'' IEEE Journal of Solid-State Circuits, vol.50, no.1,  pp. 137--149, January 2015. [Online]:  http://dx.doi.org/10.1109/JSSC.2014.2372034
@@ -1396,7 +1396,7 @@ end
 [^172]: B.Drost, M.Talegaonkar, and P.K. Hanumolu, ''Analog filter design using ring  oscillator integrators,'' IEEE Journal of Solid-State Circuits,  vol.47, no.12, pp. 3120--3129, December 2012. [Online]:  http://dx.doi.org/10.1109/JSSC.2012.2225738
 [^173]: V.Unnikrishnan and M.Vesterbacka, ''Time-mode analog-to-digital conversion  using standard cells,'' IEEE Transactions on Circuits and  Systems---Part I: Fundamental Theory and Applications, vol.61, no.12,  pp. 3348--3357, December 2014. [Online]:  http://dx.doi.org/10.1109/TCSI.2014.2340551
 [^174]: K.Yang, D.Blaauw, and D.Sylvester, ''An all-digital edge racing true random  number generator robust against pvt variations,'' IEEE Journal of  Solid-State Circuits, vol.51, no.4, pp. 1022--1031, April 2016. [Online]:  http://dx.doi.org/10.1109/JSSC.2016.2519383
-[^175]: ibitem0.5V-CircuitS.Chatterjee, Y.Tsividis, and P.Kinget, ''0.5-v analog circuit techniques  and their application in ota and filter design,'' IEEE Journal of  Solid-State Circuits, vol.40, no.12, pp. 2373--2387, December 2005.  [Online]: http://dx.doi.org/10.1109/JSSC.2005.856280
+[^175]: S.Chatterjee, Y.Tsividis, and P.Kinget, ''0.5-v analog circuit techniques  and their application in ota and filter design,'' IEEE Journal of  Solid-State Circuits, vol.40, no.12, pp. 2373--2387, December 2005.  [Online]: http://dx.doi.org/10.1109/JSSC.2005.856280
 [^176]: M.Alioto, ''Understanding dc behavior of subthreshold cmos logic through  closed-form analysis,'' IEEE Transactions on Circuits and  Systems---Part I: Fundamental Theory and Applications, vol.57, no.7, pp.  1597--1607, July 2010. [Online]:  http://dx.doi.org/10.1109/TCSI.2009.2034233
 [^177]: A.Hajimiri and T.Lee, ''A general theory of phase noise in electrical  oscillators,'' IEEE Journal of Solid-State Circuits, vol.33, no.2,  pp. 179--194, February 1998. [Online]:  http://dx.doi.org/10.1109/4.658619
 [^178]: A.Demir, A.Mehrotra, and J.Roychowdhury, ''Phase noise in oscillators: a  unifying theory and numerical methods for characterization,'' IEEE  Transactions on Circuits and Systems---Part I: Fundamental Theory and  Applications, vol.47, no.5, pp. 655--674, May 2000. [Online]:  http://dx.doi.org/10.1109/81.847872
