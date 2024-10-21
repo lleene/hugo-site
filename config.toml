@@ -1,6 +1,6 @@
 baseURL = '$HOSTNAME$/'
 title = 'Lieuwe Leene'
-languageCode = 'en-uk'
+languageCode = 'en-GB'
 theme = 'hermit'
 relativeURLs = true
 canonifyURLs = true
@@ -11,6 +11,8 @@ pygmentsUseClasses  = true
 hasCJKLanguage = true
 rssLimit = 10
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+
 enableEmoji = true
 
 themeColor = "#494f5c"
@@ -25,8 +27,9 @@ themeColor = "#494f5c"
   dateformNumTime = '2006-01-02 15:04 -0700'
   homeSubtitle    = "Welcome Friend"
 
-[author]
+[[params.author]]
   name = 'L. B. Leene'
+  email = 'lieuwe@leene.dev'
 
 [[params.social]]
   name = 'linkedin'
