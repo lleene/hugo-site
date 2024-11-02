@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="378.46924"
+   height="264.49924"
+   viewBox="0 0 378.46924 264.49924"
+   sodipodi:docname="lin2tech.pdf"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <g
+     id="g8"
+     inkscape:groupmode="layer"
+     inkscape:label="lin2tech"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,264.49923)">
+    <g
+       id="g10">
+      <text
+         xml:space="preserve"
+         transform="matrix(0,1,1,0,9.069599,62.86883)"
+         style="font-variant:normal;font-weight:normal;font-size:11.9374px;font-family:'DejaVu Sans';-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text14"><tspan
+           x="0 6.6491117 9.9557619 17.512114 24.853592 32.15926 37.065514 40.372166 45.051613 52.106594 55.890739 59.400322"
+           y="0"
+           sodipodi:role="line"
+           id="tspan12">Linearity IP</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0,1,1,0,11.457072,129.57351)"
+         style="font-variant:normal;font-weight:normal;font-size:7.75929px;font-family:'DejaVu Sans';-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text18"><tspan
+           x="0"
+           y="0"
+           id="tspan16">3</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0,1,1,0,9.069599,138.29814)"
+         style="font-variant:normal;font-weight:normal;font-size:11.9374px;font-family:'DejaVu Sans';-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text22"><tspan
+           x="0 4.6555719 12.617794 16.401937 25.128151 28.912296"
+           y="0"
+           sodipodi:role="line"
+           id="tspan20">[A.U.]</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(1,0,0,-1,102.2752,2.483066)"
+         style="font-variant:normal;font-weight:normal;font-size:11.9374px;font-family:'DejaVu Sans';-inkscape-font-specification:DejaVuSans;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="text26"><tspan
+           x="0 9.3947058 16.449688 23.791166 28.494488 36.062778 40.969032 44.275684 51.330666 58.672146 62.456287 69.702271 76.995995 80.30265 84.982094 92.287758 99.856049 107.19753 110.98167 115.63725 123.8024"
+           y="0"
+           sodipodi:role="line"
+           id="tspan24">Overdrive Voltage [V]</tspan></text>
+    </g>
+  </g>
+</svg>
