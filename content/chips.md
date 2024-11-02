@@ -12,9 +12,12 @@ tags:
 
 Here are some of the fabricated chips that I have had the privilege of
 designing over the years. These designs are the result of joint efforts with
-colleges and collaborators made possible by the Engineering and Physical
-Sciences Research Council (EPSRC) UK.
+colleges and collaborators. A few designs result from my time at Novelda AS,  
+while others were funded though Engineering and Physical Sciences Research
+Council (EPSRC) UK.
 
+{{< figure src="/images/chips/X7.jpg" title="X7 - A Dual Channel UWB Radar | 2023 | 40 nm CMOS" width="500" >}}
+{{< figure src="/images/chips/X4.jpg" title="X4 - A Single Channel UWB Radar | 2020 | 55 nm CMOS" width="500" >}}
 {{< figure src="/images/chips/C0.png" title="AKIRA - A 18b NS-SAR ADC | 2019 | 0.18 um TSMC" width="500" >}}
 {{< figure src="/images/chips/C1.jpg" title="ENGINI - A Neural Recording SoC | 2018 | 0.35 um AMS" width="500" >}}
 {{< figure src="/images/chips/C2.jpg" title="ENGINI - A Wireless BMI SoC | 2017 | 0.35 um AMS" width="500" >}}

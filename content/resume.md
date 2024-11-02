@@ -26,44 +26,64 @@ deep-brain-stimulation and brain-machine-interfaces. I specialized in realizing
 ultra-low-power instrumentation systems that can be implanted and innovated circuit
 techniques for efficiently processing biomedical signals. Most of my success
 came from applying time-domain techniques to realize sensing circuits with
-exceptional dynamic range such that a wider variety of neurological components
-can be picked up during recording or stimulation.
+exceptional dynamic range such that a wider variety of bio-sensor signal components
+can be picked up.
 
 ## Proficiencies
 
-I have well over 10 years of design experience using Cadence and Seimens (Mentor Graphics)
+I present over 10 years of design experience using Cadence and Seimens (Mentor Graphics)
 EDA design suite extensively from process-development-kit integration to mixed-signal
-design verification. Having predominantly designed mixed-signal instrumentation chips most of my
-proficiency lies with the Virtuoso analogue design flow. However I have historically
-worked in smaller design groups of 5-10 people where you need to be familiar with
-the entire development process for a device from start to finish touching on process selection,
-tool configuration, and production planning.
+design verification. I have historically worked in smaller design groups of 5-10
+people where you need to be familiar with the entire development process. This
+would include a design cycle touching on process selection, tool configuration,
+specification, circuit design, verification, and production planning.
 
-Besides that I am very comfortable with software development. I
-extensively program in python, maintaining packages for command-line-tool-chains
-and some of my hobby projects. In addition I administer and deploy several web
-services based on ruby, php, and node/js with a postgresql backend. Most of
-my earlier projects while at Imperial College were C++ based with Qt as the
-go-to graphical library and revolved around creating interfaces with custom
-devices and processing data.
+My strengths lie with high-performance circuit design where the value-added
+metrics justify a full-custom design flow. Here I have a solid track record of
+proven silicon some of which is in production. As a counter part to full-custom
+design I find that systematic design flow is incredibly important. This is the
+main drive for skill and python program development such that my team and I
+have a programmatic approach to physical verification, design documentation,
+and reporting simulation data that is is well reasoned before hand.
+
+Besides that I am very comfortable with software development. At home I 
+administer and deploy several web-based hobby projects using ruby and 
+postgresql. Some of this is in order to have more privacy control when 
+it comes to web-services but I enjoy the process of adopting and learning new
+software tools. Some of my earlier projects at Imperial College were C++ 
+based with Qt revolved around creating interfaces and visualizing recordings.
 
 # Employment Record
 
 {{< columns src="/images/about/novelda_logo_white.svg" >}}
 
 ```
+Staff IC Design Engineer
+IC Design Team Oslo Office,
+Novelda AS Oslo, Norway
+Mar. 2023 - Now
+```
+
+ - Responsible for next-generation Ultra-Wideband RF transceiver synchronization
+ and frequency-management sub-system.
+ - Designing full-custom high-speed digital logic for both asynchronous and
+ timing critical modules.
+ - Specification definition and requirements for internal IP together with 
+ self-test and calibration methodology.
+
+```
 Senior IC Design Engineer
 IC Design Team Oslo Office,
 Novelda AS Oslo, Norway
-Aug. 2019 - Now
+Aug. 2019 - Mar. 2023
 ```
 
  - Responsible for RF transceiver clocking module and phase locked loop design
- for a Ultra-Wideband human presence sensor operating in the 7.8 GHz band.
+ for the X7 Ultra-Wideband human presence sensor operating in the 7.8 GHz band.
  - Acting as System and IP integration lead handling design delivery such as
  netlist, layout, timing, and constraint files along with sign-off reports.
- - Designing full-custom high-speed digital logic for both asynchronous and
- timing critical modules.
+ - Developed python utilities with Cadence integration for better circuit
+ documentation, verification analysis, and physical verification.
 
 {{< /columns >}}
 
@@ -92,7 +112,7 @@ Imperial College London, United Kingdom
 Dec. 2015 – Dec. 2019
 ```
 
- - Reviewed 40+ manuscripts in the past 5 years from JSSC, TCASI, TCASII, and TBCAS journals
+ - Reviewed 40+ manuscripts from 2015 to 2020 from JSSC, TCASI, TCASII, and TBCAS journals
  - Facilitated ISCAS conference review process for selected analogue signal processing tracks
  - Coordinated a ICECS conference special session on Oscillator Based Computing
 
