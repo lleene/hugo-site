@@ -211,6 +211,22 @@ Aug. 2008 – May 2011
 
 {{< /columns >}}
 
+# Other Activities
+
+
+{{< columns src="/images/about/IEEE_logo.svg" >}}
+
+During my tenure at Imperial College, I actively took part in [https://orcid.org/0000-0002-6899-2662](IEEE activities) through
+conference attendance and made contributions to various journal publications.
+
+ - [IEEE Analog Signal Processing Technical Comittee](https://ieee-cas.org/technical-committee/analog-signal-processing-asp) member from 2016 - 2018. 
+ - Reviewed 40+ manuscripts in the past 5 years from JSSC, TCASI, TCASII, and TBCAS journals.
+ - Organized the 2016 ICECS Conference Special Session: Oscillator-Based Computing.
+ - Session-chair for IEEE 2017 & 2018 ISCAS Conference and Reviewer from 2013 to 2020.
+
+{{< /columns >}}
+
+
 # Personal Achievements
 
 {{< columns src="/images/about/sscs_logo.svg" >}}
