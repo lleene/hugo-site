@@ -3,3 +3,5 @@
 *.jpg binary
 *.gif binary
 *.toml filter=hostmgmt
+*.xls binary
+*.xlsx binary
