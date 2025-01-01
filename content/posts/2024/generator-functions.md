@@ -47,7 +47,19 @@ to transmit amplitude modulated symbols. As we will see the approach of using
 generator functions will allow us to synthesize high-precision waveforms with
 exact frequency characteristics with just a few predetermined coefficients.
 
-## Initial Conditions
+At first glance, we can reason that many of the desirable properties that one would 
+like to see here are similar to that of window functions (e.g. Hanning or
+Kaiser Windows)[^1]. This is because we are interested in both the time and 
+frequency properties of the generated sequence simultaneously. The key 
+difference here however is that we are constrained to polynomial dynamics.
+As a result the text-book approach for approximating a sum of weighted cosines
+may not be the best approach. Although taking a padé-approximant, using a 
+rational polynomial basis, may be a good choice in some cases. More generally
+nesting or convolving our polynomial basis will result in higher oder 
+polynomal. In order to realize a transcendental response we would need to
+revisit the feedback coefficient for each integrator.
+
+## Determining Initial Conditions
 
 There are a few ways to go about defining a polynomial \\(P(x)\\). Either in terms of
 the roots or in terms of the characteristic equation. Both are useful, 
@@ -104,6 +116,7 @@ def mapping_coefficients(order: int) -> np.array:
         # for each element calculate new coefficient
         # Based on expanding d/dx * P(x) * (x+1)
         coef[elem + 1] = (order - elem - 1) * (base[elem] + base[elem + 1])
+    # m_n will always be n!
     coef[0] = base[0] * order
     return coef
 
@@ -124,11 +137,62 @@ def initial_condition(self, poly_coef: np.array) -> np.array:
 
 ```
 
+It is worthwhile to point out that not all polynomial functions can be realized
+with this method. While not all zeros in \\( P(x) \\) have to be real, we do 
+require the characteristic coefficients \\( a_n \\) and thereby \\( c_n \\) to
+to be real numbers. 
+
 ## Frequency Response
 
-Here we will consider polynomials of even orders with real roots such
+Here we will consider a simplified scenario to exemplify the frequency \
+characteristics for generated polynomials.
+Specifically polynomials of even orders with real roots such
 that we can decompose the polynomial \\(P(x)\\) as a product of several 
 elements in the form of \\( (x+p_1)(x+p_2) \\). We can show that the 
-fourier-transform of of this element is in the form of \\( 16d^2 sinc(d ω)^4 \\)
-where \\( d = (p_1 - p_2) \\).
+fourier-transform of of this element is in the form of \\( sinc(d ω)^4 \\)
+where \\( d = (p_1 - p_2)/2 \\) such that we can resolve the transform for 
+\\( P(x) = (x+d)(x-d) \\)
 
+First consider a simple box function of 
+width \\( d/4 \\) and its corresponding fourier transform:
+
+$$
+S(x) = \begin{cases}
+   1 &\text{if |x| <= d/4 } \\\\
+   0 &\text{otherwise } 
+\end{cases}  \quad \xrightarrow{\mathfrak{F}} \quad \frac{d}{2}  sinc( \frac{d\omega}{4} ) 
+$$
+
+We can auto-convolve \\(S(x)\\) twice in order to realize a parabola with roots at
++/- d. First formulate the associated triangle function \\(T(x)\\):
+
+$$
+T(x) = S(x) \ast S(x) = \int_{-d/2}^{d/2} S(\tau) S(x-\tau) d\tau \quad = \begin{cases}
+   0  &\text{if x <  -d/2 } \\\\
+   (x+d/2)  &\text{if x <  0 } \\\\
+   (d/2-x)  &\text{if x <  d/2 } \\\\
+   0  &\text{otherwise}
+\end{cases}
+$$
+
+The second auto-convolution of \\(T(x)\\) gives back the parabola \\(P(x)\\):
+
+$$
+P(x) = T(x) \ast T(x) = \int_{-d}^{d} T(\tau) T(x-\tau) d\tau = \begin{cases}
+   d^2/4 - x^2/4  &\text{if |x| <= d } \\\\
+   0 &\text{otherwise }
+\end{cases}
+$$
+
+
+
+$$
+P(x) \quad \xrightarrow{\mathfrak{F}} \quad \frac{d^4}{16}  sinc(\frac{d\omega}{4} )^4
+$$
+
+
+## References:
+
+[^1]: A. Nuttall, ''Some windows with very good sidelobe behavior,'' IEEE 
+Trans. Acoust., Speech, Signal Process. , vol. 29, no. 1, pp. 84-91, February 
+1981 [Online]:  http://dx.doi.org/10.1109/TASSP.1981.1163506.
