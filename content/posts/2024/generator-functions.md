@@ -149,46 +149,39 @@ characteristics for generated polynomials.
 Specifically polynomials of even orders with real roots such
 that we can decompose the polynomial \\(P(x)\\) as a product of several 
 elements in the form of \\( (x+p_1)(x+p_2) \\). We can show that the 
-fourier-transform of of this element is in the form of \\( sinc(d ω)^4 \\)
-where \\( d = (p_1 - p_2)/2 \\) such that we can resolve the transform for 
-\\( P(x) = (x+d)(x-d) \\)
-
-First consider a simple box function of 
-width \\( d/4 \\) and its corresponding fourier transform:
+fourier-transform of of this element is in the form of \\( sinc(d ω)^2 \\)
+where \\( d = (p_1 - p_2)/2 \\) such that we can derive relations for the 
+polynomial \\( P(x) = d^2-x^2 \\) and scale them accordingly.
 
 $$
-S(x) = \begin{cases}
-   1 &\text{if |x| <= d/4 } \\\\
-   0 &\text{otherwise } 
-\end{cases}  \quad \xrightarrow{\mathfrak{F}} \quad \frac{d}{2}  sinc( \frac{d\omega}{4} ) 
+\hat{P}(x) = \int^{d/2}_{d/2} (d^2-x^2) cos(k x) dx 
+\quad = \quad 
+\frac{8 \sin{ (d k) }}{k^3} -  \frac{8 d \cos{ (d k ) }}{k^2}
 $$
 
-We can auto-convolve \\(S(x)\\) twice in order to realize a parabola with roots at
-+/- d. First formulate the associated triangle function \\(T(x)\\):
+We can numerically solve for some of the filter properties of interest and 
+compare to other simple windows. There is little suprise in the table below
+as the roll-off and rejection is closely related to the 3dB bandwidth.
+Here we see that the frequency response of P(x) is somewhere inbetween a 
+rectangular window and that of the raise-cosine or Hann window.
+
+| Property      | 2nd Order Poly len(2d) | Rectangle len(2d)     | Hann len(2d)          |
+|---------------|------------------------|-----------------------|-----------------------|
+| DC Value      | \\(\frac{2d^3}{3}\\)   | \\(2d^2\\)            | \\(2d^2\\)            |
+| 3db Bandwidth | \\(\sim 2.498/d\\)     | \\(\sim 1.895/d\\)    | \\(\sim 3.168/d\\)    |
+| 1st Null      | \\(\sim 4.5/d\\)       | \\(\frac{\pi}{d}\\)   | \\(\frac{2\pi}{d}\\)  |
+| Roll Off      | 40 dB / decade         | 20 dB / decade        | 60 dB / decade        |
+
+For completeness we also include the analytical expression for the Hann window
+frourier transform.
 
 $$
-T(x) = S(x) \ast S(x) = \int_{-d/2}^{d/2} S(\tau) S(x-\tau) d\tau \quad = \begin{cases}
-   0  &\text{if x <  -d/2 } \\\\
-   (x+d/2)  &\text{if x <  0 } \\\\
-   (d/2-x)  &\text{if x <  d/2 } \\\\
-   0  &\text{otherwise}
-\end{cases}
-$$
-
-The second auto-convolution of \\(T(x)\\) gives back the parabola \\(P(x)\\):
-
-$$
-P(x) = T(x) \ast T(x) = \int_{-d}^{d} T(\tau) T(x-\tau) d\tau = \begin{cases}
-   d^2/4 - x^2/4  &\text{if |x| <= d } \\\\
-   0 &\text{otherwise }
-\end{cases}
+\hat{H}(x) = \int^{d/2}_{d/2} (1+cos(\frac{2\pi x}{d})) cos(k x) dx 
+\quad = \quad 
+\frac{2 \pi^2 sin(d k)}{k(d^2 k^2-\pi^2)}
 $$
 
 
-
-$$
-P(x) \quad \xrightarrow{\mathfrak{F}} \quad \frac{d^4}{16}  sinc(\frac{d\omega}{4} )^4
-$$
 
 
 ## References:
