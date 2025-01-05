@@ -140,7 +140,7 @@ def initial_condition(self, poly_coef: np.array) -> np.array:
 It is worthwhile to point out that not all polynomial functions can be realized
 with this method. While not all zeros in \\( P(x) \\) have to be real, we do 
 require the characteristic coefficients \\( a_n \\) and thereby \\( c_n \\) to
-to be real numbers. 
+to be real numbers.
 
 ## Frequency Response
 
@@ -159,6 +159,12 @@ $$
 \frac{8 \sin{ (d k) }}{k^3} -  \frac{8 d \cos{ (d k ) }}{k^2}
 $$
 
+Here we have an example where \\(d=1\\) and we observe the expected
+characteristic functions in both time and frequency space.
+
+{{< figure src="/images/posts/generator/P2.svg" >}}
+{{< figure src="/images/posts/generator/F2.svg" >}}
+
 We can numerically solve for some of the filter properties of interest and 
 compare to other simple windows. There is little suprise in the table below
 as the roll-off and rejection is closely related to the 3dB bandwidth.
@@ -168,9 +174,10 @@ rectangular window and that of the raise-cosine or Hann window.
 | Property      | 2nd Order Poly len(2d) | Rectangle len(2d)     | Hann len(2d)          |
 |---------------|------------------------|-----------------------|-----------------------|
 | DC Value      | \\(\frac{2d^3}{3}\\)   | \\(2d^2\\)            | \\(2d^2\\)            |
-| 3db Bandwidth | \\(\sim 2.498/d\\)     | \\(\sim 1.895/d\\)    | \\(\sim 3.168/d\\)    |
+| 3dB Bandwidth | \\(\sim 2.498/d\\)     | \\(\sim 1.895/d\\)    | \\(\sim 3.168/d\\)    |
 | 1st Null      | \\(\sim 4.5/d\\)       | \\(\frac{\pi}{d}\\)   | \\(\frac{2\pi}{d}\\)  |
 | Roll Off      | 40 dB / decade         | 20 dB / decade        | 60 dB / decade        |
+| First Sidelobe| -21 dB                 | -13 dB                | -31 dB                |
 
 For completeness we also include the analytical expression for the Hann window
 frourier transform.
@@ -181,8 +188,18 @@ $$
 \frac{2 \pi^2 sin(d k)}{k(d^2 k^2-\pi^2)}
 $$
 
+Because we have a clean analytical representation of the frequency response
+it is simple to manipulate our coefficients to get a more desirable response.
+The second order function is limited to a three term composition: 
+\\(sinc + sinc/k^2 + cos/k^2\\). Adding assymetry or using odd-order polynomials 
+can resolve band-pass characteristics which are also interesting. 
 
+In the example below we have chosen to place poles at \\(\pm d\\) and 
+\\(\pm 1.2 d\\) in order to minimize the first sidelobe level using a 
+8ᵗʰ order polynomial.
 
+{{< figure src="/images/posts/generator/P4.svg" title="" width="500" >}}
+{{< figure src="/images/posts/generator/F4.svg" title="" width="500" >}}
 
 ## References:
 
