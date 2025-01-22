@@ -71,7 +71,7 @@ $$ P(x) = (x-p_1) (x-p_2) (x-p_3) ... (x-p_n) $$
 $$ P(x) = a_n x^n + ... + a_2 x^2 + a_1 x + a_0 $$
 
 We can back calculate the corresponding initial conditions for our cascade
-of integrators by considering the super-position of each component $a_n$ 
+of integrators by considering the super-position of each component \\(a_n\\) 
 seperately. Lets denote our initial conditions as \\( c_n + ... + c_2 + c_1 + c_0 \\)
 for our Nᵗʰ order polynomial. As shown in the diagram above the coefficient 
 \\(c_n\\) is directly accumulated on the left most integrator. It should be obvious
@@ -82,19 +82,20 @@ contribution from \\(a_2\\) on the 2nd order derivative is calculated as taking
 the 2nd derivative of \\(P(x)\\) and evaluating its value with x=0 which gives 
 us \\(c_2 = 2 * a_2\\). Now equating the 1st derivative from \\(a_2\\) 
 similarly gives \\(c_1 = a_2\\) and finally \\(c_0 = 0\\). If there were lower 
-order terms, the contribution from a_1 for example would be calculated 
+order terms, the contribution from \\(a_1\\) for example would be calculated 
 independently and added together.
 
 This was a simpler example but one can reason that if the mapping for a particular \\( a_n \\) is
-\\( m_n, ... , m_1, m_0 \\) such that for all \\( n \\) the initial conditions are
-\\(c_n = m_n a_n\\). Then for some given mapping of a Nᵗʰ order polynomial
+\\( m(n,i), ... , m(n,1), m(n,0) \\) such that for all \\( i \\) the initial conditions are
+\\(c_n = \sum^n_{i=0} m(n,i) * a_i\\). The final value for the initial condition \\(c_n\\) is then
+sum of all mapping terms from each \\(a_n\\). Then for some given mapping of a Nᵗʰ order polynomial
 we can add one more integration stage to the far right integrating the output 
 to realize a N+1ᵗʰ order polynomial. This is equivalent to multiplying the 
 response with \\( x + 1 \\). Now it should be clear that when we equate the 
 derivative terms the N+1ᵗʰ order terms can be derived from the Nᵗʰ order terms 
 simply by adding the appropriate contributions after the aforementioned 
-multiplication. That is \\( k_n = m_n + m_{n-1} \\) where \\( k_n \\) are the 
-mapping terms for the N+1ᵗʰ order polynomial.
+multiplication. That is \\( m(n+1,i) = m(n,i) + m(n,i-1) \\) where \\( m(n+1,i) \\) 
+are the mapping terms for the N+1ᵗʰ order polynomial.
 Interestingly the mapping here generates a set of basis coefficients related to
 the sterling-numbers of the second kind. More specifically the 
 [A019538](https://oeis.org/A019538) sequence. Using python and numpy as np 
@@ -122,7 +123,7 @@ def mapping_coefficients(order: int) -> np.array:
 
 ```
 
-This function will derive the \\( m_n \\) mapping values based on our recursive 
+This function will derive the \\( m(n,i) \\) mapping values based on our recursive 
 derivation above. In order to then determine the initial conditions we similarly
 iterate over the characteristic coefficients \\( a_n \\) and accumulate all 
 contributions to resolve the initial conditions \\( c_n \\).

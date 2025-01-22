@@ -41,7 +41,9 @@ The rest of this paper if organised as follows: Sec 3 will introduce a recurrent
 
 There are a number of recursive oscillator topologies available in the literature with two identifiable basis; biquads and waveguides[^9]. The feed-forward structure proposed here is derived from the standard coupled quadrature structure that provides feedback with equi-amplitude quadrature outputs. This structure is shown in Fig. 2a. The feed-forward configuration uses two integrators in negative feedback with two coefficients f and k to specify frequency and Q-factor respectively. This will require the same number of coefficient multiplications as the coupled quadrature configuration but uses 4 2-input summation nodes opposed to 2. The benefit here is that there are only 2 scaling coefficients and they are linearly dependent on the desired oscillation frequency. The conventional structure has f²\:dependence that requires excessive integrator precision to accurately resolve very small frequencies typically of interest for biomedical signals.
 
-$$ 	\begin{bmatrix}\hat{x}_Q \hat{x}_I\end{bmatrix} =\underbrace{\begin{bmatrix}(1-k f) & -f f & (1-k f)\end{bmatrix}}_{\mathbf{R}(k,f)}\cdot\begin{bmatrix}x_Q x_I\end{bmatrix} $$
+$$ 	\begin{bmatrix}\hat{x}_Q \hat{x}_I\end{bmatrix} = \mathbf{R}(k,f) \cdot\begin{bmatrix}x_Q x_I\end{bmatrix} $$
+
+$$ \mathbf{R}(k,f) = \begin{bmatrix}(1-k f) & -f \\\\ f & (1-k f)\end{bmatrix} $$
 
 Digital oscillators are usually characterised in terms of a rotation matrix \\(\mathbf{R}\\)(k,f) that is applied to two state variables x<sub>Q<sub> and x<sub>I<sub>. This representation is formulated in Eq. 1. For clarity the k²\: factor is ignored in this analysis since it yields a simpler solution to the basic feed-forward configuration. In this case we are interested in manipulating the pole location adaptively which is why we will solve for the complex pole positions of this dynamic system below.
 
@@ -55,7 +57,7 @@ $$ 	\begin{split}poles\left(\frac{1}{1+D_O(z)}\right) = 1 - k f \pm √{ f^2 k^2
 
 Finding the poles yields the two solutions in Eq. 4 that correspond to the complex pair P\tss{Q/I} which dictate the oscillatory behaviour of this circuit. This reveals the behaviour shown in Fig. 2b which is that adjusting k will rotate the pole-pair in and out of the unit circle resulting in a growing or receding complex exponential or oscillation. It is also readily seen that for the case k=0 the pole locations lie outside the unit circle. Solving for a steady state solution where P\tss{Q/I} are on the unit circle gives k=f/2.
 
-# 4 DDWS Core]{\\(\Delta\Sigma^2\\) type DDWS Core
+# 4 DDWS Core \\(\Delta\Sigma^2\\) type DDWS Core
 
 In order to realise the proposed multiplier-free DDWS, two additional components will be introduced. The first is a second order digital ΔΣ \: modulator that will allow us to mitigate the need to for high-precision multipliers and the second is a controller module that will regulate the dynamic oscillatory behaviour given a set input parameters. This configuration is shown in Fig. 3 together with sub-blocks for amplitude tracking and noise shaping.
 
@@ -65,26 +67,7 @@ Introducing a ΔΣ \: modulator is a well established means reduce hardware comp
 
 The block diagram in Fig. 3 also includes logic for tracking the peak to peak amplitude of the internal oscillation. This is done by detecting zero-crossings of either integrator and latching the other that will at that moment be at the peak amplitude. The oscillation amplitude is used to control the dynamics of the wavelet generator and prevents saturation.
 
-\begin{algorithm}
-	\DontPrintSemicolon
-	\KwIn{Wavelet synthesis parameters (f, c<sub>bw<sub>, ic, vpp)}
-	\KwResult{Quadrature bit-streams (D1\tss{Q/I}, D2\tss{Q/I})}
-	**Initialise:** x1<sub>Q<sub>=ic, x1<sub>I<sub>=0, x2<sub>Q<sub>=vpp/2, x2<sub>I<sub>=0, s1=c<sub>bw<sub>, s2=-c<sub>bw<sub>
-	\Begin{
-		\ShowLn
-		k1 = 0.5 + s1(D1<sub>PP<sub> - vpp)
-		k2 = 0.5 + s2(D2<sub>PP<sub> - vpp)
-		\\(\mathbf{x1}\\)\tss{Q/I}[n] = \\(\mathbf{R}\\)(k1,f) \\(\cdot\\) \\(\mathbf{x1}\\)\tss{Q/I}[n-1]
-		\\(\mathbf{x2}\\)\tss{Q/I}[n] = \\(\mathbf{R}\\)(k2,f) \\(\cdot\\) \\(\mathbf{x2}\\)\tss{Q/I}[n-1]
-		\uIf{ D1<sub>PP<sub> \textgreater   vpp **or** $|\\(k1\\)|$ \textless   c<sub>bw<sub>/2}{s1=-c<sub>bw<sub>}
-		\ElseIf{ D1<sub>PP<sub> \textless   ic **and** s2\textless0 }{s1=c<sub>bw<sub>}
-		\uIf{ D2<sub>PP<sub> \textgreater   vpp **or** $|\\(k2\\)|$ \textless   c<sub>bw<sub>/2}{s2=-c<sub>bw<sub>}
-		\ElseIf{ D2<sub>PP<sub> \textless   ic **and** s1\textless0 }{s2=c<sub>bw<sub>}
-	}
-	\BlankLine
-	\caption{DDWS Controller}
-	\label{algo:ddws-control}
-\end{algorithm}
+
 
 An overview of the control logic is described in Alg. 1. Here the notation from Eq. 1 is used to simplify how the oscillator states evolve by using the rotation matrix. In the behavioural implementation lines 5-6 are realised by a series of conditional statements that increment/decrement the oscillator states \\(\mathbf{x}\\)\tss{Q/I} and then compute the feed forward value by adding or subtracting k1/k2. Notice that we use the state variable s1/s2 to iteratively make sure only one oscillator is growing in amplitude while the other is shrinking in amplitude but at all times the growth is bounded by how close the peak to peak value is to the target maximum vpp. In fact several configurable parameters are used here in addition to vpp to specify the wavelet dynamics. Like before f controls the oscillation frequency in rads per second. The parameter ic determines the extinction ratio between the minimum and maximum oscillation amplitudes and c<sub>bw<sub> controls the window bandwidth together with ic to allow high or low out-of-band rejection.
 
